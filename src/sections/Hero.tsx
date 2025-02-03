@@ -6,7 +6,11 @@ import { HiOutlineEnvelope, HiOutlineArrowDownTray } from 'react-icons/hi2';
 import ModalCv from '@/components/ModalCv';
 import ImageModal from '@/components/ImageModal';
 import appStyles from '@/App.module.css';
-import { MotionWrapper, ObjectSideEffectMotion } from '@/components/Motions';
+import {
+  MotionWrapper,
+  ObjectSideEffectMotion,
+  ObjectScaleEffectMotion,
+} from '@/components/Motions';
 
 const Hero: React.FC = () => {
   const [loading, setLoading] = useState(false);
@@ -35,20 +39,26 @@ const Hero: React.FC = () => {
         <Container className={appStyles.sectionContainer}>
           <Row className="d-flex justify-content-center align-items-center">
             <Col xs="auto">
-              <img
-                src={Image}
-                alt="Linus Johansson"
-                className={`mb-3 ${styles.heroImage}`}
-                onClick={handleImageModalOpen}
-                style={{ cursor: 'pointer' }}
-              />
-              <h1 className={styles.gradientText}>Linus Johansson</h1>
+              <ObjectScaleEffectMotion>
+                <img
+                  src={Image}
+                  alt="Linus Johansson"
+                  className={`mb-3 rounded-circle ${styles.heroImage}`}
+                  onClick={handleImageModalOpen}
+                />
+              </ObjectScaleEffectMotion>
+              <ObjectSideEffectMotion direction="left">
+                <div className={styles.gradientText}>Linus Johansson</div>
+              </ObjectSideEffectMotion>
+
               <hr className="my-2" />
-              <p
-                className={`text-body-secondary fw-semibold ${styles.developerTitle}`}
-              >
-                Junior Full-Stack Developer
-              </p>
+              <ObjectSideEffectMotion direction="right">
+                <div
+                  className={`text-body-secondary fw-semibold ${styles.developerTitle}`}
+                >
+                  Junior Full-Stack Developer
+                </div>
+              </ObjectSideEffectMotion>
               <div className="d-flex flex-column align-items-center mt-4">
                 <ObjectSideEffectMotion direction="left">
                   <Button

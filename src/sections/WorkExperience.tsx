@@ -22,9 +22,7 @@ const WorkExperience: React.FC = () => {
   const renderExperience = (experience: Experience, index: number) => (
     <Col lg={6} className="mb-4" key={index}>
       <ObjectScaleEffectMotion>
-        <Card
-          className={`h-100 ${styles.experienceCard} ${appStyles.cardBgColor}`}
-        >
+        <Card className={`${styles.experienceCard} ${appStyles.cardBgColor}`}>
           <Card.Body className={appStyles.cardBody}>
             <Card.Title className={`${appStyles.cardHeader} mb-2`}>
               <span>{experience.title}</span>

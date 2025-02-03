@@ -1,6 +1,12 @@
 import { FC, ReactNode } from 'react';
 import { motion, MotionProps } from 'framer-motion';
 
+const transition = {
+  duration: 0.8,
+  delay: 0.2,
+  ease: 'easeInOut',
+};
+
 interface MotionWrapperProps extends MotionProps {
   children: ReactNode;
   sectionId: keyof typeof motionVariants;
@@ -8,31 +14,31 @@ interface MotionWrapperProps extends MotionProps {
 
 const motionVariants = {
   hero: {
-    initial: { opacity: 0, scale: 0.5 },
-    whileInView: { opacity: 1, scale: 1 },
+    initial: { opacity: 0 },
+    whileInView: { opacity: 1 },
   },
   aboutMe: {
-    initial: { opacity: 0, y: -90 },
+    initial: { opacity: 0, y: 95 },
     whileInView: { opacity: 1, y: 0 },
   },
   education: {
-    initial: { opacity: 0, y: 90 },
+    initial: { opacity: 0, y: 95 },
     whileInView: { opacity: 1, y: 0 },
   },
   skills: {
-    initial: { opacity: 0, y: -90 },
+    initial: { opacity: 0, y: 95 },
     whileInView: { opacity: 1, y: 0 },
   },
   portfolio: {
-    initial: { opacity: 0, y: 90 },
+    initial: { opacity: 0, y: 95 },
     whileInView: { opacity: 1, y: 0 },
   },
   workExperience: {
-    initial: { opacity: 0, y: -90 },
+    initial: { opacity: 0, y: 95 },
     whileInView: { opacity: 1, y: 0 },
   },
   contact: {
-    initial: { opacity: 0, y: 90 },
+    initial: { opacity: 0, y: 95 },
     whileInView: { opacity: 1, y: 0 },
   },
 };
@@ -48,7 +54,7 @@ const MotionWrapper: FC<MotionWrapperProps> = ({
     <motion.div
       initial={variants.initial}
       whileInView={variants.whileInView || {}}
-      transition={{ duration: 0.7, ease: 'easeInOut' }}
+      transition={transition}
       {...props}
     >
       {children}
@@ -63,11 +69,11 @@ interface ObjectSideEffectMotionProps extends MotionProps {
 
 const ObjectSideEffect = {
   left: {
-    initial: { opacity: 0, x: -90 },
+    initial: { opacity: 0, x: -95 },
     whileInView: { opacity: 1, x: 0 },
   },
   right: {
-    initial: { opacity: 0, x: 90 },
+    initial: { opacity: 0, x: 95 },
     whileInView: { opacity: 1, x: 0 },
   },
 };
@@ -83,7 +89,7 @@ const ObjectSideEffectMotion: FC<ObjectSideEffectMotionProps> = ({
     <motion.div
       initial={variants.initial}
       whileInView={variants.whileInView}
-      transition={{ duration: 0.7, ease: 'easeOut' }}
+      transition={transition}
       {...props}
     >
       {children}
@@ -96,7 +102,7 @@ interface ObjectScaleEffectMotionProps extends MotionProps {
 }
 
 const ObjectScaleEffect = {
-  initial: { opacity: 0, scale: 0.7 },
+  initial: { opacity: 0, scale: 0.5 },
   whileInView: { opacity: 1, scale: 1 },
 };
 
