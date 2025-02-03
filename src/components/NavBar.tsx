@@ -1,4 +1,4 @@
-import React, { useState, useCallback, RefObject } from 'react';
+import React, { useState, useCallback, RefObject, memo } from 'react';
 import {
   Navbar,
   Nav,
@@ -151,4 +151,4 @@ const NavBar: React.FC = () => {
   );
 };
 
-export default NavBar;
+export default memo(NavBar);

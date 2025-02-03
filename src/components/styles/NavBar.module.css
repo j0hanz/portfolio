@@ -1,3 +1,9 @@
+.navLink,
+.navIcon,
+.navLinkText {
+  transition: color 0.3s ease;
+}
+
 .navLink {
   display: flex;
   align-items: center;
@@ -5,7 +11,6 @@
 
 .navIcon {
   color: var(--nav-icon-color);
-  transition: color 0.3s ease;
   margin-bottom: 2px;
   font-size: 0.95rem;
 }
@@ -14,18 +19,6 @@
   color: var(--nav-link-color);
   letter-spacing: 1.25px;
   font-size: 1.05rem;
-  transition:
-    color 0.3s ease,
-    transform 0.3s ease;
-}
-
-.navLogo {
-  width: 1.9rem;
-  transition: opacity 0.3s ease;
-}
-
-.navLogo:hover {
-  opacity: 0.7;
 }
 
 .navLinkText:hover {
@@ -35,6 +28,15 @@
 .navLinkText:active {
   transform: scale(0.98);
   transition: transform 0.1s ease;
+}
+
+.navLogo {
+  width: 1.9rem;
+  transition: opacity 0.3s ease;
+}
+
+.navLogo:hover {
+  opacity: 0.7;
 }
 
 .customNavbar {

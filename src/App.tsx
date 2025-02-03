@@ -1,16 +1,18 @@
+import React, { lazy, Suspense } from 'react';
 import NavBar from '@/components/NavBar';
-import Hero from '@/sections/Hero';
-import AboutMe from '@/sections/AboutMe';
-import Skills from '@/sections/Skills';
-import WorkExperience from '@/sections/WorkExperience';
-import Education from '@/sections/Education';
-import Portfolio from '@/sections/Portfolio';
-import ContactForm from '@/sections/ContactForm';
-import Footer from '@/components/Footer';
-import styles from '@/App.module.css';
 import Spinner from '@/components/Spinner';
 import Toast from '@/components/Toast';
 import useLoading from '@/hooks/useLoading';
+import styles from '@/App.module.css';
+
+const Hero = lazy(() => import('@/sections/Hero'));
+const AboutMe = lazy(() => import('@/sections/AboutMe'));
+const Skills = lazy(() => import('@/sections/Skills'));
+const WorkExperience = lazy(() => import('@/sections/WorkExperience'));
+const Education = lazy(() => import('@/sections/Education'));
+const Portfolio = lazy(() => import('@/sections/Portfolio'));
+const ContactForm = lazy(() => import('@/sections/ContactForm'));
+const Footer = lazy(() => import('@/components/Footer'));
 
 interface MainContentProps {
   loading: boolean;
@@ -21,7 +23,7 @@ const MainContent: React.FC<MainContentProps> = ({ loading }) => (
     {loading ? (
       <Spinner />
     ) : (
-      <>
+      <Suspense fallback={<Spinner />}>
         <Hero />
         <AboutMe />
         <Education />
@@ -30,7 +32,7 @@ const MainContent: React.FC<MainContentProps> = ({ loading }) => (
         <WorkExperience />
         <ContactForm />
         <Footer />
-      </>
+      </Suspense>
     )}
   </main>
 );
