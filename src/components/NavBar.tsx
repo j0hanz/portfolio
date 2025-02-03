@@ -17,7 +17,11 @@ import { socialLinks } from '@/data/socialLinks';
 import { navLinks } from '@/data/navLinks';
 
 const NavBar: React.FC = () => {
-  const { expanded, setExpanded, ref }: {
+  const {
+    expanded,
+    setExpanded,
+    ref,
+  }: {
     expanded: boolean;
     setExpanded: (value: boolean) => void;
     ref: RefObject<HTMLDivElement>;
@@ -71,21 +75,45 @@ const NavBar: React.FC = () => {
           </Navbar.Toggle>
           <Navbar.Collapse id="navbar-nav">
             <Nav className={`ms-auto my-1 my-lg-0 ${appStyles.cardBgImage}`}>
-              {navLinks.map(({ id, icon: Icon, label }: { id: string; icon: React.ElementType; label: string }) => (
-                <Nav.Link
-                  key={id}
-                  href={`#${id}`}
-                  className={`${styles.navLink} my-2 my-lg-0 ms-lg-2`}
-                  onClick={handleNavLinkClick}
-                >
-                  <Icon className={`${styles.navIcon} me-lg-2 me-3`} />
-                  <span className={styles.navLinkText}>{label}</span>
-                </Nav.Link>
-              ))}
+              {navLinks.map(
+                ({
+                  id,
+                  icon: Icon,
+                  label,
+                }: {
+                  id: string;
+                  icon: React.ElementType;
+                  label: string;
+                }) => (
+                  <Nav.Link
+                    key={id}
+                    href={`#${id}`}
+                    className={`${styles.navLink} my-2 my-lg-0 ms-lg-2`}
+                    onClick={handleNavLinkClick}
+                  >
+                    <Icon className={`${styles.navIcon} me-lg-2 me-3`} />
+                    <span className={styles.navLinkText}>{label}</span>
+                  </Nav.Link>
+                ),
+              )}
             </Nav>
             <Nav className="d-flex flex-row justify-content-between justify-content-sm-start ms-lg-2">
               {socialLinks.map(
-                ({ id, icon, href, onClick, tooltip, iconClass }: { id: string; icon: any; href?: string; onClick?: () => void; tooltip?: string; iconClass?: string }) => (
+                ({
+                  id,
+                  icon,
+                  href,
+                  onClick,
+                  tooltip,
+                  iconClass,
+                }: {
+                  id: string;
+                  icon: any;
+                  href?: string;
+                  onClick?: () => void;
+                  tooltip?: string;
+                  iconClass?: string;
+                }) => (
                   <OverlayTrigger
                     key={id}
                     placement="bottom"
@@ -112,7 +140,7 @@ const NavBar: React.FC = () => {
                       />
                     </Nav.Link>
                   </OverlayTrigger>
-                )
+                ),
               )}
             </Nav>
           </Navbar.Collapse>

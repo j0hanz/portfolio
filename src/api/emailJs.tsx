@@ -26,7 +26,7 @@ const EmailHandler: FC<EmailHandlerProps> = ({ formData, onEmailSent }) => {
         process.env.VITE_SERVICE_ID as string,
         process.env.VITE_TEMPLATE_ID as string,
         form.current,
-        process.env.VITE_USER_ID as string
+        process.env.VITE_USER_ID as string,
       )
       .then((response) => {
         console.log('Email successfully sent!', response.status, response.text);

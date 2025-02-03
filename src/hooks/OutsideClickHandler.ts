@@ -1,6 +1,12 @@
 import { useState, useEffect, useRef, RefObject } from 'react';
 
-const useClickOutsideToggle = (callback: () => void): { expanded: boolean; setExpanded: (value: boolean) => void; ref: RefObject<HTMLDivElement> } => {
+const useClickOutsideToggle = (
+  callback: () => void,
+): {
+  expanded: boolean;
+  setExpanded: (value: boolean) => void;
+  ref: RefObject<HTMLDivElement>;
+} => {
   const [expanded, setExpanded] = useState(false);
   const ref = useRef<HTMLDivElement>(null!);
 

@@ -25,7 +25,9 @@ interface FormFieldsProps {
     url?: string;
     message?: string;
   };
-  handleChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  handleChange: (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => void;
 }
 
 const FormFields = ({ formData, errors, handleChange }: FormFieldsProps) => {

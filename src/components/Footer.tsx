@@ -45,8 +45,21 @@ const Footer: FC = () => {
             <div className="mt-4 mt-sm-0 mx-auto">
               <Row className="d-flex justify-content-sm-end flex-row justify-content-between">
                 {socialLinks.map(
-                  ({ id, icon, href, onClick, tooltip, iconClass }:
-                    { id: string; icon: any; href?: string; onClick?: () => void; tooltip: string; iconClass: string }) => (
+                  ({
+                    id,
+                    icon,
+                    href,
+                    onClick,
+                    tooltip,
+                    iconClass,
+                  }: {
+                    id: string;
+                    icon: any;
+                    href?: string;
+                    onClick?: () => void;
+                    tooltip: string;
+                    iconClass: string;
+                  }) => (
                     <Col xs="auto" className="mb-2 mb-sm-0" key={id}>
                       <OverlayTrigger
                         placement="top"
@@ -77,7 +90,7 @@ const Footer: FC = () => {
                         </a>
                       </OverlayTrigger>
                     </Col>
-                  )
+                  ),
                 )}
               </Row>
             </div>

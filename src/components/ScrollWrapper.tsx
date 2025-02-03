@@ -6,7 +6,10 @@ interface ScrollRevealWrapperProps {
   config?: Partial<scrollReveal.ScrollRevealObject>;
 }
 
-const ScrollRevealWrapper: FC<ScrollRevealWrapperProps> = ({ children, config }) => {
+const ScrollRevealWrapper: FC<ScrollRevealWrapperProps> = ({
+  children,
+  config,
+}) => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {

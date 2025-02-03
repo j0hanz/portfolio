@@ -26,7 +26,10 @@ const AboutMeText: React.FC = () => (
   </AboutMeCard>
 );
 
-const AboutMeList: React.FC<{ items: AboutMeItem[], onShowModal: () => void }> = ({ items, onShowModal }) => (
+const AboutMeList: React.FC<{
+  items: AboutMeItem[];
+  onShowModal: () => void;
+}> = ({ items, onShowModal }) => (
   <AboutMeCard>
     <ul className="list-unstyled">
       {items.map((item, index) => (

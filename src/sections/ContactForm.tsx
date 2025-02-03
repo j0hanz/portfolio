@@ -50,7 +50,9 @@ const ContactForm: React.FC = () => {
   const [errors, setErrors] = useState<FormErrors>({});
 
   /* Handle form input changes */
-  const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 

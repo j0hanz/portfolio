@@ -27,7 +27,7 @@ const ModalCv: FC<ModalCvProps> = ({ show, handleClose }) => {
         console.error('Download failed:', error);
       }
     },
-    [handleClose]
+    [handleClose],
   );
 
   return (

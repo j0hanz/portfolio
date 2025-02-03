@@ -53,7 +53,7 @@ const Portfolio: React.FC = () => {
       const histories = await Promise.all(historyPromises);
       const combinedHistories = histories.reduce(
         (acc, history) => ({ ...acc, ...history }),
-        {}
+        {},
       );
       setCommitHistory(combinedHistories);
     };
