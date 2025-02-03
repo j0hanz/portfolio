@@ -1,0 +1,76 @@
+.navLink {
+  display: flex;
+  align-items: center;
+}
+
+.navIcon {
+  color: var(--nav-icon-color);
+  transition: color 0.3s ease;
+  margin-bottom: 2px;
+  font-size: 0.95rem;
+}
+
+.navLinkText {
+  color: var(--nav-link-color);
+  letter-spacing: 1.25px;
+  font-size: 1.05rem;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.navLogo {
+  width: 1.9rem;
+  transition: opacity 0.3s ease;
+}
+
+.navLogo:hover {
+  opacity: 0.7;
+}
+
+.navLinkText:hover {
+  color: var(--nav-link-hover-color);
+}
+
+.navLinkText:active {
+  transform: scale(0.98);
+  transition: transform 0.1s ease;
+}
+
+.customNavbar {
+  background: var(--bg-dark);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.customToggle {
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  --bs-navbar-color: transparent;
+  border: none !important;
+}
+
+.customToggle:hover,
+.customToggle:focus {
+  border: none !important;
+}
+
+.customToggle:active {
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.navIconToggle {
+  color: var(--nav-icon-color);
+  font-size: 1.8rem;
+  transition:
+    transform 0.4s ease,
+    color 0.3s ease,
+    opacity 0.3s ease;
+  display: inline-block;
+}

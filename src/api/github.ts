@@ -1,4 +1,4 @@
-const GITHUB_TOKEN: string | undefined = process.env.VITE_GITHUB_TOKEN;
+const GITHUB_TOKEN: string | undefined = import.meta.env.VITE_GITHUB_TOKEN;
 
 /* Fetch commit history from GitHub */
 export const fetchCommitHistory = async (repo: string): Promise<any[]> => {

@@ -1,0 +1,36 @@
+.footerBg {
+  background: var(--bg-dark);
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+.footerIcon {
+  font-size: 0.9rem !important;
+  color: var(--linkedin-color);
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.footerLink {
+  font-size: 0.8rem !important;
+  color: var(--text-light);
+  transition: color 0.3s ease;
+}
+
+.footerLinkHeader {
+  font-size: 1.1rem !important;
+  color: var(--text-light);
+}
+
+.footerLink:hover {
+  color: #66b2ff;
+}
+
+@media (max-width: 575px) {
+  .footerBg {
+    padding-bottom: 0.1rem !important;
+  }
+  .footerIcon {
+    margin-right: 12px !important;
+  }
+}

@@ -6,10 +6,10 @@ import '/node_modules/flag-icons/css/flag-icons.min.css';
 import '@/toastify.css';
 import App from '@/App';
 
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 
 // Initialize EmailJS with the user ID
-emailjs.init(process.env.REACT_APP_USER_ID as string);
+emailjs.init(import.meta.env.VITE_USER_ID as string);
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

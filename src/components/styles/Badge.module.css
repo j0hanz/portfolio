@@ -1,0 +1,60 @@
+img {
+  box-shadow: none !important;
+}
+
+.badgeContainer {
+  text-align: center;
+}
+
+.badgeImage {
+  width: 130px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  border: none !important;
+  opacity: 0.8;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.15),
+    0 6px 24px rgba(0, 0, 0, 0.15);
+  transition:
+    opacity 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.badgeImage:hover {
+  opacity: 1;
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.3),
+    0 12px 48px rgba(0, 0, 0, 0.3);
+}
+
+.badgeDate {
+  color: var(--badge-color) !important;
+  font-size: 0.7rem !important;
+}
+
+.badgeText {
+  color: var(--badge-color);
+  text-decoration: none;
+  text-transform: uppercase !important;
+  font-size: 0.7rem;
+}
+
+@media (max-width: 575px) {
+  .badgeImage {
+    width: 100px;
+  }
+}
+
+@media (max-width: 350px) {
+  .badgeImage {
+    width: 85px;
+  }
+
+  .badgeText {
+    font-size: 0.6rem;
+  }
+  .badgeDate {
+    font-size: 0.6rem !important;
+  }
+}
