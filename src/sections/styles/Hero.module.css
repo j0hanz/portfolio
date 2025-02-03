@@ -1,0 +1,78 @@
+.heroImage {
+  width: 225px !important;
+  height: 225px !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2) !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+.heroImage:hover {
+  opacity: 0.95;
+  filter: brightness(0.8);
+  transform: scale(1.05);
+}
+
+.developerTitle {
+  font-size: 1.3rem !important;
+  letter-spacing: 1.2px !important;
+  text-transform: uppercase !important;
+}
+
+.gradientText {
+  background: var(--text-hero);
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: var(--bg-transparent);
+  font-size: 2.8rem !important;
+  letter-spacing: 3px !important;
+}
+
+.downloadButton {
+  background-image: var(--btn-bg-primary);
+}
+
+.contactButton {
+  background-image: var(--btn-bg-dark);
+}
+
+.buttonIcon {
+  margin-left: 0.25rem !important;
+}
+
+@media (max-width: 768px) {
+  .heroImage {
+    width: 185px !important;
+    height: 185px !important;
+  }
+
+  .gradientText {
+    font-size: 2.5rem !important;
+    letter-spacing: 2px !important;
+  }
+
+  .developerTitle {
+    font-size: 1.3rem !important;
+    letter-spacing: 0.5px !important;
+  }
+}
+
+@media (max-width: 525px) {
+  .gradientText {
+    font-size: 2.3rem !important;
+    letter-spacing: 1.5px !important;
+  }
+
+  .developerTitle {
+    font-size: 1.2rem !important;
+  }
+}
+
+@media (max-width: 340px) {
+  .gradientText {
+    font-size: 1.9rem !important;
+  }
+
+  .developerTitle {
+    font-size: 1rem !important;
+  }
+}

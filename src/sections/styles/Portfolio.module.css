@@ -1,0 +1,80 @@
+.technologies {
+  margin-bottom: 1.5rem !important;
+}
+
+.badgePosition {
+  position: relative !important;
+}
+
+.hackathonBadge {
+  position: absolute !important;
+  bottom: 3rem !important;
+  right: 0.5rem !important;
+  width: 6.5rem !important;
+  opacity: 0.8 !important;
+}
+
+.gitpodLogo {
+  position: absolute !important;
+  bottom: 4rem !important;
+  right: 1rem !important;
+  width: 3.5rem !important;
+  opacity: 0.8 !important;
+}
+
+.customButton {
+  width: 100px !important;
+  max-width: 100% !important;
+  height: 30px !important;
+  border: none !important;
+  border-radius: 6.5px !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  line-height: 0 !important;
+}
+
+.githubButton {
+  background-image: var(--btn-bg-dark);
+}
+
+.demoButton {
+  background-image: var(--btn-bg-primary);
+}
+
+.customButton:hover {
+  filter: brightness(0.7);
+}
+
+.customButton:active {
+  transform: scale(0.99);
+}
+
+.buttonIcon {
+  margin-right: 10px;
+  font-size: 0.9rem;
+  color: var(--btn-icon-color);
+}
+
+.buttonText {
+  font-size: 0.9rem;
+  letter-spacing: 0.25px;
+  color: var(--text-light);
+}
+
+.githubStats img {
+  display: flex !important;
+  flex-direction: column !important;
+  margin-bottom: 0.4rem !important;
+  border: none !important;
+  border-radius: 6.5px !important;
+}
+
+@media (max-width: 425px) {
+  .hackathonBadge {
+    width: 5.5rem !important;
+  }
+}

@@ -1,35 +1,54 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
+import NavBar from '@/components/NavBar';
+import Hero from '@/sections/Hero';
+import AboutMe from '@/sections/AboutMe';
+import Skills from '@/sections/Skills';
+import WorkExperience from '@/sections/WorkExperience';
+import Education from '@/sections/Education';
+import Portfolio from '@/sections/Portfolio';
+import ContactForm from '@/sections/ContactForm';
+import Footer from '@/components/Footer';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '/node_modules/flag-icons/css/flag-icons.min.css';
+import '@/toastify.css';
+import styles from '@/App.module.css';
+import Spinner from '@/components/Spinner';
+import Toast from '@/components/Toast';
+import useLoading from '@/hooks/useLoading';
 
-function App() {
-  const [count, setCount] = useState(0);
+interface MainContentProps {
+  loading: boolean;
+}
+
+const MainContent: React.FC<MainContentProps> = ({ loading }) => (
+  <main className={styles.mainContent}>
+    {loading ? (
+      <Spinner />
+    ) : (
+      <>
+        <Hero />
+        <AboutMe />
+        <Education />
+        <Skills />
+        <Portfolio />
+        <WorkExperience />
+        <ContactForm />
+        <Footer />
+      </>
+    )}
+  </main>
+);
+
+const App: React.FC = () => {
+  const loading: boolean = useLoading();
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className={styles.appContainer}>
+      <div className={styles.fixedBackground}></div>
+      <NavBar />
+      <Toast />
+      <MainContent loading={loading} />
+    </div>
   );
-}
+};
 
 export default App;
