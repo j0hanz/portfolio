@@ -24,7 +24,11 @@ import hackathonBadge3 from '@/assets/hackathonBadgeThirdPlace.webp';
 import gitpodLogo from '@/assets/gitpod.webp';
 import projects from '@/data/projects';
 import { fetchCommitHistory } from '@/api/github';
-import { MotionWrapper, ObjectScaleEffectMotion } from '@/components/Motions';
+import {
+  MotionWrapper,
+  ObjectScaleEffectMotion,
+  ObjectSideEffectMotion,
+} from '@/components/Motions';
 
 interface Project {
   title: string;
@@ -121,49 +125,53 @@ const Portfolio: React.FC = () => {
                 />
               )}
               <div className="mt-3 d-flex justify-content-between">
-                <Button
-                  href={project.github}
-                  target="_blank"
-                  className={`${styles.customButton} ${styles.githubButton}`}
-                >
-                  <FontAwesomeIcon
-                    icon={faGithub}
-                    className={styles.buttonIcon}
-                  />
-                  <span className={styles.buttonText}>GitHub</span>
-                </Button>
-                {project.demo ? (
+                <ObjectSideEffectMotion direction="right">
                   <Button
-                    href={project.demo}
+                    href={project.github}
                     target="_blank"
-                    className={`${styles.customButton} ${styles.demoButton}`}
+                    className={`${styles.customButton} ${styles.githubButton}`}
                   >
-                    <HiMiniPlay className={styles.buttonIcon} />
-                    <span className={styles.buttonText}>Demo</span>
+                    <FontAwesomeIcon
+                      icon={faGithub}
+                      className={styles.buttonIcon}
+                    />
+                    <span className={styles.buttonText}>GitHub</span>
                   </Button>
-                ) : (
-                  <OverlayTrigger
-                    placement="bottom"
-                    overlay={
-                      <Tooltip
-                        id={`tooltip-no-demo-${index}`}
-                        className={appStyles.customTooltip}
-                      >
-                        Coming soon!
-                      </Tooltip>
-                    }
-                  >
-                    <span className="d-inline-block">
-                      <Button
-                        disabled
-                        className={`${styles.customButton} ${styles.demoButton}`}
-                      >
-                        <HiMiniPlay className={styles.buttonIcon} />
-                        <span className={styles.buttonText}>Demo</span>
-                      </Button>
-                    </span>
-                  </OverlayTrigger>
-                )}
+                </ObjectSideEffectMotion>
+                <ObjectSideEffectMotion direction="left">
+                  {project.demo ? (
+                    <Button
+                      href={project.demo}
+                      target="_blank"
+                      className={`${styles.customButton} ${styles.demoButton}`}
+                    >
+                      <HiMiniPlay className={styles.buttonIcon} />
+                      <span className={styles.buttonText}>Demo</span>
+                    </Button>
+                  ) : (
+                    <OverlayTrigger
+                      placement="bottom"
+                      overlay={
+                        <Tooltip
+                          id={`tooltip-no-demo-${index}`}
+                          className={appStyles.customTooltip}
+                        >
+                          Coming soon!
+                        </Tooltip>
+                      }
+                    >
+                      <span className="d-inline-block">
+                        <Button
+                          disabled
+                          className={`${styles.customButton} ${styles.demoButton}`}
+                        >
+                          <HiMiniPlay className={styles.buttonIcon} />
+                          <span className={styles.buttonText}>Demo</span>
+                        </Button>
+                      </span>
+                    </OverlayTrigger>
+                  )}
+                </ObjectSideEffectMotion>
               </div>
             </Card.Body>
           </Card>
