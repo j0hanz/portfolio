@@ -14,11 +14,7 @@ const Portfolio = lazy(() => import('@/sections/Portfolio'));
 const ContactForm = lazy(() => import('@/sections/ContactForm'));
 const Footer = lazy(() => import('@/components/Footer'));
 
-interface MainContentProps {
-  loading: boolean;
-}
-
-const MainContent: React.FC<MainContentProps> = ({ loading }) => (
+const MainContent: React.FC<{ loading: boolean }> = ({ loading }) => (
   <main className={styles.mainContent}>
     {loading ? (
       <Spinner />
@@ -38,7 +34,7 @@ const MainContent: React.FC<MainContentProps> = ({ loading }) => (
 );
 
 const App: React.FC = () => {
-  const loading: boolean = useLoading();
+  const loading = useLoading();
 
   return (
     <div className={styles.appContainer}>
