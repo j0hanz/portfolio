@@ -9,6 +9,7 @@ import styles from './styles/WorkExperience.module.css';
 import appStyles from '@/App.module.css';
 import ScrollRevealWrapper from '@/components/ScrollWrapper';
 import experiences from '@/data/experiences';
+import MotionWrapper from '@/components/Motions';
 
 interface Experience {
   title: string;
@@ -53,7 +54,7 @@ const WorkExperience: React.FC = () => {
   );
 
   return (
-    <ScrollRevealWrapper>
+    <MotionWrapper>
       <section id="work-experience" className={appStyles.sectionPadding}>
         <Container className={appStyles.sectionContainer}>
           <div className={appStyles.sectionTitleContainer}>
@@ -65,7 +66,7 @@ const WorkExperience: React.FC = () => {
           <Row>{experiences.map(renderExperience)}</Row>
         </Container>
       </section>
-    </ScrollRevealWrapper>
+    </MotionWrapper>
   );
 };
 

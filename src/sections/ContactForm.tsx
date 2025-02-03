@@ -18,9 +18,9 @@ import styles from './styles/ContactForm.module.css';
 import appStyles from '@/App.module.css';
 import { validateForm } from '@/utils/validation';
 import { toast } from 'react-toastify';
-import ScrollRevealWrapper from '@/components/ScrollWrapper';
 import FormContact from '@/form/contact';
 import Badge from '@/components/Badges';
+import MotionWrapper from '@/components/Motions';
 
 interface FormData {
   name: string;
@@ -87,7 +87,7 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <ScrollRevealWrapper>
+    <MotionWrapper>
       <section id="contact" className={appStyles.sectionPadding}>
         <Container className={appStyles.sectionContainer}>
           <div className={appStyles.sectionTitleContainer}>
@@ -153,7 +153,7 @@ const ContactForm: React.FC = () => {
           </Row>
         </Container>
       </section>
-    </ScrollRevealWrapper>
+    </MotionWrapper>
   );
 };
 

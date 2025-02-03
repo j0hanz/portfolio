@@ -3,8 +3,8 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 import { HiMiniCog8Tooth } from 'react-icons/hi2';
 import styles from './styles/Skills.module.css';
 import appStyles from '@/App.module.css';
-import ScrollRevealWrapper from '@/components/ScrollWrapper';
 import skills from '@/data/skills';
+import MotionWrapper from '@/components/Motions';
 
 interface Skill {
   icon: React.ElementType;
@@ -27,7 +27,7 @@ const Skills: React.FC = () => {
   );
 
   return (
-    <ScrollRevealWrapper>
+    <MotionWrapper>
       <section id="skills" className={appStyles.sectionPadding}>
         <Container className={appStyles.sectionContainer}>
           <div className={appStyles.sectionTitleContainer}>
@@ -39,7 +39,7 @@ const Skills: React.FC = () => {
           <Row>{skills.map(renderSkill)}</Row>
         </Container>
       </section>
-    </ScrollRevealWrapper>
+    </MotionWrapper>
   );
 };
 

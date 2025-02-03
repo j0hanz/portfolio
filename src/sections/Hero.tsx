@@ -7,6 +7,7 @@ import ModalCv from '@/components/ModalCv';
 import ImageModal from '@/components/ImageModal';
 import appStyles from '@/App.module.css';
 import ScrollRevealWrapper from '@/components/ScrollWrapper';
+import MotionWrapper from '@/components/Motions';
 
 const Hero: React.FC = () => {
   /* State to manage loading spinner for CV download */
@@ -42,7 +43,7 @@ const Hero: React.FC = () => {
   const contactButtonClass = `${buttonBaseClass} ${styles.contactButton}`;
 
   return (
-    <ScrollRevealWrapper>
+    <MotionWrapper>
       <section id="hero" className={`text-center ${appStyles.sectionPadding}`}>
         <Container className={appStyles.sectionContainer}>
           <Row className="d-flex justify-content-center align-items-center">
@@ -54,13 +55,17 @@ const Hero: React.FC = () => {
                 onClick={handleImageModalOpen}
                 style={{ cursor: 'pointer' }}
               />
+
               <h1 className={styles.gradientText}>Linus Johansson</h1>
+
               <hr className="my-2" />
+
               <p
                 className={`text-body-secondary fw-semibold ${styles.developerTitle}`}
               >
                 Junior Full-Stack Developer
               </p>
+
               <div className="d-flex flex-column align-items-center mt-4">
                 <Button
                   onClick={handleModalOpen}
@@ -85,6 +90,7 @@ const Hero: React.FC = () => {
                     </>
                   )}
                 </Button>
+
                 <Button href="#contact" className={contactButtonClass}>
                   <HiOutlineEnvelope className={appStyles.buttonIcon} />
                   <span className={appStyles.buttonText}>Get in Touch</span>
@@ -96,7 +102,7 @@ const Hero: React.FC = () => {
         <ModalCv show={showModal} handleClose={handleModalClose} />
         <ImageModal show={showImageModal} handleClose={handleImageModalClose} />
       </section>
-    </ScrollRevealWrapper>
+    </MotionWrapper>
   );
 };
 

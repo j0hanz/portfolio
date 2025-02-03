@@ -9,8 +9,8 @@ import {
 import Credential from '@/components/Credential';
 import styles from './styles/Education.module.css';
 import appStyles from '@/App.module.css';
-import ScrollRevealWrapper from '@/components/ScrollWrapper';
 import education from '@/data/education';
+import MotionWrapper from '@/components/Motions';
 
 interface EducationItem {
   title: string;
@@ -65,7 +65,7 @@ const Education: React.FC = () => {
   );
 
   return (
-    <ScrollRevealWrapper>
+    <MotionWrapper>
       <section id="education" className={appStyles.sectionPadding}>
         <Container className={appStyles.sectionContainer}>
           <div className={appStyles.sectionTitleContainer}>
@@ -79,7 +79,7 @@ const Education: React.FC = () => {
           <Credential show={showModal} handleClose={toggleModal} />
         </Container>
       </section>
-    </ScrollRevealWrapper>
+    </MotionWrapper>
   );
 };
 

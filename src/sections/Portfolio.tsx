@@ -22,9 +22,9 @@ import appStyles from '@/App.module.css';
 import hackathonBadge from '@/assets/hackathonBadge.webp';
 import hackathonBadge3 from '@/assets/hackathonBadgeThirdPlace.webp';
 import gitpodLogo from '@/assets/gitpod.webp';
-import ScrollRevealWrapper from '@/components/ScrollWrapper';
 import projects from '@/data/projects';
 import { fetchCommitHistory } from '@/api/github';
+import MotionWrapper from '@/components/Motions';
 
 interface Project {
   title: string;
@@ -171,7 +171,7 @@ const Portfolio: React.FC = () => {
   };
 
   return (
-    <ScrollRevealWrapper>
+    <MotionWrapper>
       <section id="portfolio" className={appStyles.sectionPadding}>
         <Container className={appStyles.sectionContainer}>
           <div className={appStyles.sectionTitleContainer}>
@@ -183,7 +183,7 @@ const Portfolio: React.FC = () => {
           <Row>{projects.map(renderProject)}</Row>
         </Container>
       </section>
-    </ScrollRevealWrapper>
+    </MotionWrapper>
   );
 };
 
