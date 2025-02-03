@@ -21,13 +21,9 @@ interface EducationItem {
 }
 
 const Education: React.FC = () => {
-  /* State to manage the visibility of the credential modal */
   const [showModal, setShowModal] = useState(false);
-
-  /* Toggles the credential modal open or closed */
   const toggleModal = () => setShowModal((prevShowModal) => !prevShowModal);
 
-  /* Renders each education item in a card with title, school, duration, and optional credential */
   const renderEducationItem = (edu: EducationItem, index: number) => (
     <Col lg={6} className="mb-4" key={index}>
       <Card
@@ -65,7 +61,7 @@ const Education: React.FC = () => {
   );
 
   return (
-    <MotionWrapper>
+    <MotionWrapper sectionId="education">
       <section id="education" className={appStyles.sectionPadding}>
         <Container className={appStyles.sectionContainer}>
           <div className={appStyles.sectionTitleContainer}>
@@ -75,7 +71,6 @@ const Education: React.FC = () => {
             <div className={appStyles.sectionTitle}>Education</div>
           </div>
           <Row>{education.map(renderEducationItem)}</Row>
-          {/* Renders the credential modal if showModal is true */}
           <Credential show={showModal} handleClose={toggleModal} />
         </Container>
       </section>

@@ -49,14 +49,12 @@ const ContactForm: React.FC = () => {
   });
   const [errors, setErrors] = useState<FormErrors>({});
 
-  /* Handle form input changes */
   const handleChange = (
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
-  /* Handle email sent status */
   const handleEmailSent = (success: boolean) => {
     setIsSending(false);
     if (success) {
@@ -67,7 +65,6 @@ const ContactForm: React.FC = () => {
     }
   };
 
-  /* Handle form submission */
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const newErrors = validateForm(formData);
@@ -79,7 +76,6 @@ const ContactForm: React.FC = () => {
     }
   };
 
-  /* Handle form reset */
   const handleReset = () => {
     setFormData({ name: '', email: '', company: '', url: '', message: '' });
     setErrors({});
@@ -87,7 +83,7 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <MotionWrapper>
+    <MotionWrapper sectionId="contact">
       <section id="contact" className={appStyles.sectionPadding}>
         <Container className={appStyles.sectionContainer}>
           <div className={appStyles.sectionTitleContainer}>

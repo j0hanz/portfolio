@@ -6,20 +6,13 @@ import { HiOutlineEnvelope, HiOutlineArrowDownTray } from 'react-icons/hi2';
 import ModalCv from '@/components/ModalCv';
 import ImageModal from '@/components/ImageModal';
 import appStyles from '@/App.module.css';
-import ScrollRevealWrapper from '@/components/ScrollWrapper';
 import MotionWrapper from '@/components/Motions';
 
 const Hero: React.FC = () => {
-  /* State to manage loading spinner for CV download */
   const [loading, setLoading] = useState(false);
-
-  /* State to manage the visibility of the CV modal */
   const [showModal, setShowModal] = useState(false);
-
-  /* State to manage the visibility of the image modal */
   const [showImageModal, setShowImageModal] = useState(false);
 
-  /* Function to handle opening the CV modal with a loading spinner */
   const handleModalOpen = useCallback(() => {
     setLoading(true);
     setTimeout(() => {
@@ -28,22 +21,16 @@ const Hero: React.FC = () => {
     }, 1000);
   }, []);
 
-  /* Function to handle closing the CV modal */
   const handleModalClose = useCallback(() => setShowModal(false), []);
-
-  /* Function to handle opening the image modal */
   const handleImageModalOpen = useCallback(() => setShowImageModal(true), []);
-
-  /* Function to handle closing the image modal */
   const handleImageModalClose = useCallback(() => setShowImageModal(false), []);
 
-  /* Common class names for buttons */
   const buttonBaseClass = `d-flex align-items-center ${appStyles.customButton}`;
   const downloadButtonClass = `${buttonBaseClass} my-4 ${styles.downloadButton}`;
   const contactButtonClass = `${buttonBaseClass} ${styles.contactButton}`;
 
   return (
-    <MotionWrapper>
+    <MotionWrapper sectionId="hero">
       <section id="hero" className={`text-center ${appStyles.sectionPadding}`}>
         <Container className={appStyles.sectionContainer}>
           <Row className="d-flex justify-content-center align-items-center">
@@ -55,17 +42,13 @@ const Hero: React.FC = () => {
                 onClick={handleImageModalOpen}
                 style={{ cursor: 'pointer' }}
               />
-
               <h1 className={styles.gradientText}>Linus Johansson</h1>
-
               <hr className="my-2" />
-
               <p
                 className={`text-body-secondary fw-semibold ${styles.developerTitle}`}
               >
                 Junior Full-Stack Developer
               </p>
-
               <div className="d-flex flex-column align-items-center mt-4">
                 <Button
                   onClick={handleModalOpen}
@@ -90,7 +73,6 @@ const Hero: React.FC = () => {
                     </>
                   )}
                 </Button>
-
                 <Button href="#contact" className={contactButtonClass}>
                   <HiOutlineEnvelope className={appStyles.buttonIcon} />
                   <span className={appStyles.buttonText}>Get in Touch</span>

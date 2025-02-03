@@ -27,7 +27,7 @@ const Skills: React.FC = () => {
   );
 
   return (
-    <MotionWrapper>
+    <MotionWrapper sectionId="skills">
       <section id="skills" className={appStyles.sectionPadding}>
         <Container className={appStyles.sectionContainer}>
           <div className={appStyles.sectionTitleContainer}>

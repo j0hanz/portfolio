@@ -2,19 +2,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 body {
-  font-family: 'Poppins', sans-serif !important;
-  -webkit-font-smoothing: antialiased !important;
-  -moz-osx-font-smoothing: grayscale !important;
-  overflow-y: scroll !important;
-  color: var(--text-color) !important;
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-y: scroll;
+  color: var(--text-color);
   background: var(--body-bg);
-  margin: 0 !important;
-  padding: 0 !important;
-  box-sizing: border-box !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 *::-webkit-scrollbar {
-  width: 0.9rem !important;
+  width: 0.7rem;
 }
 
 *::-webkit-scrollbar-thumb {
@@ -76,7 +76,7 @@ body {
 }
 
 .copyrightText {
-  font-size: 0.8rem !important;
+  font-size: 0.8rem;
   color: var(--text-light);
   opacity: 0.8;
 }
@@ -91,55 +91,55 @@ body {
 }
 
 .sectionContainer {
-  padding-right: 0 !important;
-  padding-left: 0 !important;
+  padding-right: 0;
+  padding-left: 0;
 }
 
 .sectionPadding {
-  padding-top: 3rem !important;
-  padding-bottom: 2.5rem !important;
+  padding-top: 3rem;
+  padding-bottom: 2.5rem;
 }
 
 .sectionTitleContainer {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  margin-bottom: 1.2rem !important;
-  line-height: 0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.2rem;
+  line-height: 0;
 }
 
 .cardText {
-  line-height: 1.75 !important;
-  letter-spacing: 0.15px !important;
+  line-height: 1.75;
+  letter-spacing: 0.15px;
 }
 
 .customTooltip {
-  color: var(--text-light) !important;
-  border: none !important;
-  border-radius: 7.5px !important;
+  color: var(--text-light);
+  border: none;
+  border-radius: 7.5px;
 }
 
 .cardBgColor {
   background: var(--card-bg);
-  border: none !important;
-  border-radius: 6.5px !important;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1) !important;
-  max-width: 100% !important;
-  width: 100% !important;
+  border: none;
+  border-radius: 6.5px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  width: 100%;
 }
 
 .modalBody {
-  background: var(--modal-bg) !important;
-  border: none !important;
-  width: 100% !important;
-  max-width: 500px !important;
-  border-radius: 7.5px !important;
-  position: relative !important;
-  padding-top: 2.5rem !important;
-  padding-bottom: 1.25rem !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  color: var(--text-light) !important;
+  background: var(--modal-bg);
+  border: none;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 7.5px;
+  position: relative;
+  padding-top: 2.5rem;
+  padding-bottom: 1.25rem;
+  padding-left: 0;
+  padding-right: 0;
+  color: var(--text-light);
 }
 
 .cardBgImage {
@@ -164,46 +164,46 @@ body {
 }
 
 .cardBody {
-  padding: 0.75rem !important;
-  border: none !important;
+  padding: 0.75rem;
+  border: none;
 }
 
 .formBody {
-  padding: 0 !important;
-  border: none !important;
+  padding: 0;
+  border: none;
 }
 
 .cardHeader {
-  letter-spacing: 0.25px !important;
-  font-size: 1.25rem !important;
+  letter-spacing: 0.25px;
+  font-size: 1.25rem;
 }
 
 .customBadge {
-  padding-top: 0.1rem !important;
-  display: inline-block !important;
-  align-items: center !important;
-  color: var(--badge-color) !important;
-  margin-right: 1rem !important;
-  font-size: 0.8rem !important;
+  padding-top: 0.1rem;
+  display: inline-block;
+  align-items: center;
+  color: var(--badge-color);
+  margin-right: 1rem;
+  font-size: 0.8rem;
 }
 
 .badgeText {
-  color: var(--badge-color) !important;
-  text-transform: uppercase !important;
-  font-size: 0.7rem !important;
+  color: var(--badge-color);
+  text-transform: uppercase;
+  font-size: 0.7rem;
 }
 
 .customButton {
   width: 180px;
   height: 40px;
-  border: none !important;
-  border-radius: 6.5px !important;
-  transition: all 0.3s ease !important;
+  border: none;
+  border-radius: 6.5px;
+  transition: all 0.3s ease;
   text-transform: uppercase;
   max-width: 100%;
-  display: flex !important;
-  justify-content: space-evenly !important;
-  padding: 0 !important;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0;
   cursor: pointer;
 }
 
@@ -219,16 +219,16 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  border: none !important;
+  border: none;
   cursor: pointer;
   opacity: 0.7;
   transition: opacity 0.5s ease;
   background-color: #00000067;
-  border-radius: 0 10rem 0 50rem !important;
-  height: 35px !important;
-  width: 35px !important;
-  padding-left: 0.5rem !important;
-  padding-bottom: 0.5rem !important;
+  border-radius: 0 10rem 0 50rem;
+  height: 35px;
+  width: 35px;
+  padding-left: 0.5rem;
+  padding-bottom: 0.5rem;
   z-index: 10;
 }
 
@@ -247,25 +247,25 @@ body {
 }
 
 .mainContent {
-  width: 100% !important;
-  padding-top: 5rem !important;
+  width: 100%;
+  padding-top: 5rem;
 }
 
 .mainIcon {
-  color: var(--main-icon-color) !important;
-  margin-right: 0.65rem !important;
-  font-size: 1.8rem !important;
+  color: var(--main-icon-color);
+  margin-right: 0.65rem;
+  font-size: 1.8rem;
 }
 
 .sectionTitle {
-  font-size: 2rem !important;
-  font-weight: 500 !important;
-  color: var(--section-title-color) !important;
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--section-title-color);
 }
 
 .titleIcon {
-  margin-right: 0.5rem !important;
-  font-size: 1rem !important;
+  margin-right: 0.5rem;
+  font-size: 1rem;
 }
 
 .buttonIcon {
@@ -278,11 +278,11 @@ body {
 }
 
 .btnCredential {
-  cursor: pointer !important;
-  line-height: 0 !important;
-  border: none !important;
-  border-radius: 6.5px !important;
-  transition: all 0.5s ease !important;
+  cursor: pointer;
+  line-height: 0;
+  border: none;
+  border-radius: 6.5px;
+  transition: all 0.5s ease;
   background-image: var(--btn-bg-dark);
 }
 
@@ -297,6 +297,6 @@ body {
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .mainContent {
-    padding-top: 3rem !important;
+    padding-top: 3rem;
   }
 }

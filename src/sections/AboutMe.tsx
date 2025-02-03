@@ -52,7 +52,7 @@ const AboutMe: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <MotionWrapper>
+    <MotionWrapper sectionId="aboutMe">
       <section id="about-me" className={appStyles.sectionPadding}>
         <Container className={appStyles.sectionContainer}>
           <div className={appStyles.sectionTitleContainer}>

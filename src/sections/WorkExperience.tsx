@@ -7,7 +7,6 @@ import {
 } from 'react-icons/hi2';
 import styles from './styles/WorkExperience.module.css';
 import appStyles from '@/App.module.css';
-import ScrollRevealWrapper from '@/components/ScrollWrapper';
 import experiences from '@/data/experiences';
 import MotionWrapper from '@/components/Motions';
 
@@ -54,7 +53,7 @@ const WorkExperience: React.FC = () => {
   );
 
   return (
-    <MotionWrapper>
+    <MotionWrapper sectionId="workExperience">
       <section id="work-experience" className={appStyles.sectionPadding}>
         <Container className={appStyles.sectionContainer}>
           <div className={appStyles.sectionTitleContainer}>

@@ -171,7 +171,7 @@ const Portfolio: React.FC = () => {
   };
 
   return (
-    <MotionWrapper>
+    <MotionWrapper sectionId="portfolio">
       <section id="portfolio" className={appStyles.sectionPadding}>
         <Container className={appStyles.sectionContainer}>
           <div className={appStyles.sectionTitleContainer}>
