@@ -10,7 +10,7 @@ import Credential from '@/components/Credential';
 import styles from './styles/Education.module.css';
 import appStyles from '@/App.module.css';
 import education from '@/data/education';
-import MotionWrapper from '@/components/Motions';
+import { MotionWrapper, ObjectScaleEffectMotion } from '@/components/Motions';
 
 interface EducationItem {
   title: string;
@@ -26,37 +26,39 @@ const Education: React.FC = () => {
 
   const renderEducationItem = (edu: EducationItem, index: number) => (
     <Col lg={6} className="mb-4" key={index}>
-      <Card
-        className={`h-100 ${styles.educationCard} ${appStyles.cardBgColor}`}
-      >
-        <Card.Body className={appStyles.cardBody}>
-          <Card.Title className={`${appStyles.cardHeader} mb-2`}>
-            <span>{edu.title}</span>
-          </Card.Title>
-          <Card.Subtitle className="mb-3 d-flex align-items-center">
-            <div className={appStyles.customBadge}>
-              <HiOutlineBuildingLibrary className="me-2" />
-              <span className={appStyles.badgeText}>{edu.school}</span>
-            </div>
-            <span className={appStyles.customBadge}>
-              <HiOutlineCalendar className="me-2" />
-              <span className={appStyles.badgeText}>{edu.duration}</span>
-            </span>
-          </Card.Subtitle>
-          {edu.description && (
-            <Card.Text className={appStyles.cardText}>
-              {edu.description.map((desc, i) => (
-                <p key={i}>{desc}</p>
-              ))}
-            </Card.Text>
-          )}
-          {edu.hasCredential && (
-            <Button onClick={toggleModal} className={appStyles.btnCredential}>
-              <HiMiniCheckBadge className={appStyles.certificateIcon} />
-            </Button>
-          )}
-        </Card.Body>
-      </Card>
+      <ObjectScaleEffectMotion>
+        <Card
+          className={`h-100 ${styles.educationCard} ${appStyles.cardBgColor}`}
+        >
+          <Card.Body className={appStyles.cardBody}>
+            <Card.Title className={`${appStyles.cardHeader} mb-2`}>
+              <span>{edu.title}</span>
+            </Card.Title>
+            <Card.Subtitle className="mb-3 d-flex align-items-center">
+              <div className={appStyles.customBadge}>
+                <HiOutlineBuildingLibrary className="me-2" />
+                <span className={appStyles.badgeText}>{edu.school}</span>
+              </div>
+              <span className={appStyles.customBadge}>
+                <HiOutlineCalendar className="me-2" />
+                <span className={appStyles.badgeText}>{edu.duration}</span>
+              </span>
+            </Card.Subtitle>
+            {edu.description && (
+              <Card.Text className={appStyles.cardText}>
+                {edu.description.map((desc, i) => (
+                  <p key={i}>{desc}</p>
+                ))}
+              </Card.Text>
+            )}
+            {edu.hasCredential && (
+              <Button onClick={toggleModal} className={appStyles.btnCredential}>
+                <HiMiniCheckBadge className={appStyles.certificateIcon} />
+              </Button>
+            )}
+          </Card.Body>
+        </Card>
+      </ObjectScaleEffectMotion>
     </Col>
   );
 

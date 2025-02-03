@@ -6,7 +6,7 @@ import { HiOutlineEnvelope, HiOutlineArrowDownTray } from 'react-icons/hi2';
 import ModalCv from '@/components/ModalCv';
 import ImageModal from '@/components/ImageModal';
 import appStyles from '@/App.module.css';
-import MotionWrapper from '@/components/Motions';
+import { MotionWrapper, ObjectSideEffectMotion } from '@/components/Motions';
 
 const Hero: React.FC = () => {
   const [loading, setLoading] = useState(false);
@@ -50,33 +50,39 @@ const Hero: React.FC = () => {
                 Junior Full-Stack Developer
               </p>
               <div className="d-flex flex-column align-items-center mt-4">
-                <Button
-                  onClick={handleModalOpen}
-                  disabled={loading}
-                  className={downloadButtonClass}
-                >
-                  {loading ? (
-                    <Spinner
-                      variant="light"
-                      as="span"
-                      animation="border"
-                      size="sm"
-                      role="status"
-                      aria-hidden="true"
-                    />
-                  ) : (
-                    <>
-                      <HiOutlineArrowDownTray
-                        className={`${appStyles.buttonIcon} ${styles.buttonIcon}`}
+                <ObjectSideEffectMotion direction="left">
+                  <Button
+                    onClick={handleModalOpen}
+                    disabled={loading}
+                    className={downloadButtonClass}
+                  >
+                    {loading ? (
+                      <Spinner
+                        variant="light"
+                        as="span"
+                        animation="border"
+                        size="sm"
+                        role="status"
+                        aria-hidden="true"
                       />
-                      <span className={appStyles.buttonText}>Download CV</span>
-                    </>
-                  )}
-                </Button>
-                <Button href="#contact" className={contactButtonClass}>
-                  <HiOutlineEnvelope className={appStyles.buttonIcon} />
-                  <span className={appStyles.buttonText}>Get in Touch</span>
-                </Button>
+                    ) : (
+                      <>
+                        <HiOutlineArrowDownTray
+                          className={`${appStyles.buttonIcon} ${styles.buttonIcon}`}
+                        />
+                        <span className={appStyles.buttonText}>
+                          Download CV
+                        </span>
+                      </>
+                    )}
+                  </Button>
+                </ObjectSideEffectMotion>
+                <ObjectSideEffectMotion direction="right">
+                  <Button href="#contact" className={contactButtonClass}>
+                    <HiOutlineEnvelope className={appStyles.buttonIcon} />
+                    <span className={appStyles.buttonText}>Get in Touch</span>
+                  </Button>
+                </ObjectSideEffectMotion>
               </div>
             </Col>
           </Row>

@@ -4,7 +4,7 @@ import { HiMiniCog8Tooth } from 'react-icons/hi2';
 import styles from './styles/Skills.module.css';
 import appStyles from '@/App.module.css';
 import skills from '@/data/skills';
-import MotionWrapper from '@/components/Motions';
+import { MotionWrapper } from '@/components/Motions';
 
 interface Skill {
   icon: React.ElementType;

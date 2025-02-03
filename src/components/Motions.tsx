@@ -20,12 +20,12 @@ const motionVariants = {
     whileInView: { opacity: 1, y: 0 },
   },
   skills: {
-    initial: { opacity: 0, scale: 0.5 },
-    whileInView: { opacity: 1, scale: 1 },
+    initial: { opacity: 0, y: -90 },
+    whileInView: { opacity: 1, y: 0 },
   },
   portfolio: {
-    initial: { opacity: 0, scale: 0.5 },
-    whileInView: { opacity: 1, scale: 1 },
+    initial: { opacity: 0, y: 90 },
+    whileInView: { opacity: 1, y: 0 },
   },
   workExperience: {
     initial: { opacity: 0, y: -90 },
@@ -47,8 +47,8 @@ const MotionWrapper: FC<MotionWrapperProps> = ({
   return (
     <motion.div
       initial={variants.initial}
-      whileInView={variants.whileInView}
-      transition={{ duration: 0.8, ease: 'easeInOut' }}
+      whileInView={variants.whileInView || {}}
+      transition={{ duration: 0.7, ease: 'easeInOut' }}
       {...props}
     >
       {children}
@@ -56,4 +56,64 @@ const MotionWrapper: FC<MotionWrapperProps> = ({
   );
 };
 
-export default MotionWrapper;
+interface ObjectSideEffectMotionProps extends MotionProps {
+  children: ReactNode;
+  direction?: 'left' | 'right';
+}
+
+const ObjectSideEffect = {
+  left: {
+    initial: { opacity: 0, x: -90 },
+    whileInView: { opacity: 1, x: 0 },
+  },
+  right: {
+    initial: { opacity: 0, x: 90 },
+    whileInView: { opacity: 1, x: 0 },
+  },
+};
+
+const ObjectSideEffectMotion: FC<ObjectSideEffectMotionProps> = ({
+  children,
+  direction = 'left',
+  ...props
+}) => {
+  const variants = ObjectSideEffect[direction];
+
+  return (
+    <motion.div
+      initial={variants.initial}
+      whileInView={variants.whileInView}
+      transition={{ duration: 0.7, ease: 'easeOut' }}
+      {...props}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+interface ObjectScaleEffectMotionProps extends MotionProps {
+  children: ReactNode;
+}
+
+const ObjectScaleEffect = {
+  initial: { opacity: 0, scale: 0.7 },
+  whileInView: { opacity: 1, scale: 1 },
+};
+
+const ObjectScaleEffectMotion: FC<ObjectScaleEffectMotionProps> = ({
+  children,
+  ...props
+}) => {
+  return (
+    <motion.div
+      initial={ObjectScaleEffect.initial}
+      whileInView={ObjectScaleEffect.whileInView}
+      transition={{ duration: 0.7, ease: 'easeInOut' }}
+      {...props}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+export { MotionWrapper, ObjectSideEffectMotion, ObjectScaleEffectMotion };
