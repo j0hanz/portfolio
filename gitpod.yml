@@ -1,21 +1,2 @@
 image:
   file: .gitpod.Dockerfile
-tasks:
-  - init: npm install
-    command: npm run dev
-vscode:
-  extensions:
-    - dbaeumer.vscode-eslint
-    - esbenp.prettier-vscode
-    - msjsdiag.debugger-for-chrome
-    - eamodio.gitlens
-    - mgmcdermott.vscode-language-babel
-    - dsznajder.es7-react-js-snippets
-    - burkeholland.simple-react-snippets
-    - infeng.vscode-react-typescript
-    - christian-kohler.path-intellisense
-    - christian-kohler.npm-intellisense
-    - steoates.autoimport
-    - YoavBls.pretty-ts-errors
-    - sdras.night-owl
-    - PKief.material-icon-theme
