@@ -46,9 +46,8 @@ const NavBar: React.FC = () => {
       <Navbar
         ref={ref}
         fixed="top"
-        variant="dark"
         expand="lg"
-        className={`${styles.customNavbar} px-0 py-2`}
+        className={styles.customNavbar}
         expanded={expanded}
       >
         <Container fluid className="pe-1">

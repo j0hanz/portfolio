@@ -11,8 +11,6 @@
 
 .navIcon {
   color: var(--nav-icon-color);
-  margin-bottom: 2px;
-  font-size: 0.95rem;
 }
 
 .navLinkText {
@@ -49,30 +47,21 @@
 
 .customToggle {
   transition: transform 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  --bs-navbar-color: transparent;
-  border: none !important;
+  box-shadow: none !important;
 }
 
 .customToggle:hover,
 .customToggle:focus {
-  border: none !important;
 }
 
 .customToggle:active {
-  transform: scale(0.9);
+  transform: scale(0.8);
   transition: transform 0.3s ease;
 }
 
 .navIconToggle {
   color: var(--nav-icon-color);
   font-size: 1.8rem;
-  transition:
-    transform 0.4s ease,
-    color 0.3s ease,
-    opacity 0.3s ease;
+  transition: transform 0.3s ease;
   display: inline-block;
 }
