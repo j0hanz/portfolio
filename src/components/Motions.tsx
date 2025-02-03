@@ -8,32 +8,32 @@ interface MotionWrapperProps extends MotionProps {
 
 const motionVariants = {
   hero: {
-    initial: { opacity: 0, scale: 0.3 },
+    initial: { opacity: 0, scale: 0.5 },
     whileInView: { opacity: 1, scale: 1 },
   },
   aboutMe: {
-    initial: { opacity: 0, x: -100 },
-    whileInView: { opacity: 1, x: 0 },
+    initial: { opacity: 0, y: -90 },
+    whileInView: { opacity: 1, y: 0 },
   },
   education: {
-    initial: { opacity: 0, x: 100 },
-    whileInView: { opacity: 1, x: 0 },
+    initial: { opacity: 0, y: 90 },
+    whileInView: { opacity: 1, y: 0 },
   },
   skills: {
-    initial: { opacity: 0, scale: 0.3 },
+    initial: { opacity: 0, scale: 0.5 },
     whileInView: { opacity: 1, scale: 1 },
   },
   portfolio: {
-    initial: { opacity: 0, x: -100 },
-    whileInView: { opacity: 1, x: 0 },
+    initial: { opacity: 0, scale: 0.5 },
+    whileInView: { opacity: 1, scale: 1 },
   },
   workExperience: {
-    initial: { opacity: 0, x: 100 },
-    whileInView: { opacity: 1, x: 0 },
+    initial: { opacity: 0, y: -90 },
+    whileInView: { opacity: 1, y: 0 },
   },
   contact: {
-    initial: { opacity: 0, scale: 0.3 },
-    whileInView: { opacity: 1, scale: 1 },
+    initial: { opacity: 0, y: 90 },
+    whileInView: { opacity: 1, y: 0 },
   },
 };
 
