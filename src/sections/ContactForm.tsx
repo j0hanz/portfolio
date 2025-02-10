@@ -20,11 +20,7 @@ import { validateForm } from '@/utils/validation';
 import { toast } from 'react-toastify';
 import FormContact from '@/form/contact';
 import Badge from '@/components/Badges';
-import {
-  MotionWrapper,
-  ObjectScaleEffectMotion,
-  ObjectSideEffectMotion,
-} from '@/components/Motions';
+import { MotionWrapper, ObjectScaleEffectMotion } from '@/components/Motions';
 
 interface FormData {
   name: string;
@@ -108,43 +104,38 @@ const ContactForm: React.FC = () => {
                         handleChange={handleChange}
                       />
                       <div className="d-flex justify-content-between mt-3 p-2">
-                        <ObjectSideEffectMotion direction="right">
-                          <Button
-                            className={styles.clearButton}
-                            type="button"
-                            onClick={handleReset}
-                            disabled={isSending}
-                          >
-                            <HiOutlineTrash
-                              className={styles.buttonIconClear}
+                        <Button
+                          className={styles.clearButton}
+                          type="button"
+                          onClick={handleReset}
+                          disabled={isSending}
+                        >
+                          <HiOutlineTrash className={styles.buttonIconClear} />
+                        </Button>
+
+                        <Button
+                          className={styles.submitButton}
+                          type="submit"
+                          disabled={isSending}
+                        >
+                          {isSending ? (
+                            <Spinner
+                              variant="light"
+                              as="span"
+                              animation="border"
+                              size="sm"
+                              role="status"
+                              aria-hidden="true"
                             />
-                          </Button>
-                        </ObjectSideEffectMotion>
-                        <ObjectSideEffectMotion direction="left">
-                          <Button
-                            className={styles.submitButton}
-                            type="submit"
-                            disabled={isSending}
-                          >
-                            {isSending ? (
-                              <Spinner
-                                variant="light"
-                                as="span"
-                                animation="border"
-                                size="sm"
-                                role="status"
-                                aria-hidden="true"
+                          ) : (
+                            <>
+                              <HiOutlinePaperAirplane
+                                className={styles.buttonIcon}
                               />
-                            ) : (
-                              <>
-                                <HiOutlinePaperAirplane
-                                  className={styles.buttonIcon}
-                                />
-                                <span className={styles.buttonText}>Send</span>
-                              </>
-                            )}
-                          </Button>
-                        </ObjectSideEffectMotion>
+                              <span className={styles.buttonText}>Send</span>
+                            </>
+                          )}
+                        </Button>
                       </div>
                     </Form>
                   </Card.Body>
