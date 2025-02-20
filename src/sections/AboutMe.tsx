@@ -6,11 +6,7 @@ import styles from './styles/AboutMe.module.css';
 import appStyles from '../App.module.css';
 import aboutMeItems from '../data/aboutMeItems';
 import aboutMeText from '../data/aboutMeText';
-import {
-  MotionWrapper,
-  ObjectSideEffectMotion,
-  ObjectScaleEffectMotion,
-} from '@/components/Motions';
+import { MotionWrapper } from '@/components/Motions';
 
 interface AboutMeItem {
   title: string;
@@ -65,21 +61,13 @@ const AboutMe: React.FC = () => {
           </div>
           <Row>
             <Col md={6} className="mb-4">
-              <ObjectScaleEffectMotion>
-                <ObjectSideEffectMotion direction="left">
-                  <AboutMeText />
-                </ObjectSideEffectMotion>
-              </ObjectScaleEffectMotion>
+              <AboutMeText />
             </Col>
             <Col md={6} className="mb-4">
-              <ObjectScaleEffectMotion>
-                <ObjectSideEffectMotion direction="right">
-                  <AboutMeList
-                    items={aboutMeItems}
-                    onShowModal={() => setShowModal(true)}
-                  />
-                </ObjectSideEffectMotion>
-              </ObjectScaleEffectMotion>
+              <AboutMeList
+                items={aboutMeItems}
+                onShowModal={() => setShowModal(true)}
+              />
             </Col>
           </Row>
           <Credential

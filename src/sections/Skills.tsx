@@ -4,7 +4,7 @@ import { HiMiniCog8Tooth } from 'react-icons/hi2';
 import styles from './styles/Skills.module.css';
 import appStyles from '@/App.module.css';
 import skills from '@/data/skills';
-import { MotionWrapper, ObjectScaleEffectMotion } from '@/components/Motions';
+import { MotionWrapper } from '@/components/Motions';
 
 interface Skill {
   icon: React.ElementType;
@@ -15,17 +15,15 @@ const Skills: React.FC = () => {
   /* Renders each skill as a card with an icon and label */
   const renderSkill = (skill: Skill, index: number) => (
     <Col md={3} sm={6} xs={6} key={index} className="text-center mb-4">
-      <ObjectScaleEffectMotion>
-        <Card className={`h-100 ${styles.skillCard} ${appStyles.cardBgColor}`}>
-          <Card.Body className={appStyles.cardBody}>
-            <skill.icon className={`mt-1 ${styles.skillIcon}`} />
+      <Card className={`h-100 ${styles.skillCard} ${appStyles.cardBgColor}`}>
+        <Card.Body className={appStyles.cardBody}>
+          <skill.icon className={`mt-1 ${styles.skillIcon}`} />
 
-            <Card.Title className={`my-2 ${styles.skillLabel}`}>
-              {skill.label}
-            </Card.Title>
-          </Card.Body>
-        </Card>
-      </ObjectScaleEffectMotion>
+          <Card.Title className={`my-2 ${styles.skillLabel}`}>
+            {skill.label}
+          </Card.Title>
+        </Card.Body>
+      </Card>
     </Col>
   );
 
