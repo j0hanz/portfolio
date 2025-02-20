@@ -1,6 +1,5 @@
 /* CSS variables for theme customization */
 :root {
-  --badge-border-color: #dadada;
   --badge-color: #2d2d2d;
   --bg-dark: #181818dc;
   --bg-transparent: transparent;
@@ -22,10 +21,8 @@
   --certificate-color: #ffc800;
   --trash-icon-color: #ffc800;
   --error-icon-color: #dc1a1a;
-  --error-text-color: #2d2d2d;
   --form-border-color: #dadada;
   --github-color: #ffffff;
-  --input-placeholder-color: #2d2d2d;
   --linkedin-color: #0a66c2;
   --main-icon-color: #2d2d2d;
   --modal-bg: #181818d8;
