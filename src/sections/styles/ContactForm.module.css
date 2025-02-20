@@ -89,7 +89,7 @@
 }
 
 .submitButton:active {
-  transform: skew(-10deg) scale(0.98);
+  transform: skew(-10deg) scale(0.96);
 }
 
 .clearButton {
@@ -99,7 +99,6 @@
   border: none;
   border-radius: 6.5px;
   transition: all 0.2s ease;
-  transform: skew(-10deg);
   text-transform: uppercase;
   display: flex;
   align-items: center;
@@ -111,5 +110,5 @@
 }
 
 .clearButton:active {
-  transform: skew(-10deg) scale(0.98);
+  transform: scale(0.96);
 }
