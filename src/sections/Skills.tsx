@@ -1,6 +1,7 @@
 import React from 'react';
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { HiMiniCog8Tooth } from 'react-icons/hi2';
+import Card from '@/components/Card';
 import styles from './styles/Skills.module.css';
 import appStyles from '@/App.module.css';
 import skills from '@/data/skills';
@@ -12,17 +13,10 @@ interface Skill {
 }
 
 const Skills: React.FC = () => {
-  /* Renders each skill as a card with an icon and label */
   const renderSkill = (skill: Skill, index: number) => (
     <Col md={3} sm={6} xs={6} key={index} className="text-center mb-4">
-      <Card className={`h-100 ${styles.skillCard} ${appStyles.cardBgColor}`}>
-        <Card.Body className={appStyles.cardBody}>
-          <skill.icon className={`mt-1 ${styles.skillIcon}`} />
-
-          <Card.Title className={`my-2 ${styles.skillLabel}`}>
-            {skill.label}
-          </Card.Title>
-        </Card.Body>
+      <Card title={skill.label} className={styles.skillCard}>
+        <skill.icon className={`mt-1 ${styles.skillIcon}`} />
       </Card>
     </Col>
   );

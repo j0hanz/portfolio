@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import { HiUser, HiMiniCheckBadge } from 'react-icons/hi2';
-import Credential from '../components/Credential';
+import Credential from '@/components/Credential';
+import Card from '@/components/Card';
 import styles from './styles/AboutMe.module.css';
-import appStyles from '../App.module.css';
-import aboutMeItems from '../data/aboutMeItems';
-import aboutMeText from '../data/aboutMeText';
+import appStyles from '@/App.module.css';
+import aboutMeItems from '@/data/aboutMeItems';
+import aboutMeText from '@/data/aboutMeText';
 import { MotionWrapper } from '@/components/Motions';
 
 interface AboutMeItem {
@@ -14,23 +15,17 @@ interface AboutMeItem {
   hasCredential: boolean;
 }
 
-const AboutMeCard: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <Card className={`h-100 ${styles.aboutMeCard} ${appStyles.cardBgColor}`}>
-    <Card.Body className={appStyles.cardBody}>{children}</Card.Body>
-  </Card>
-);
-
 const AboutMeText: React.FC = () => (
-  <AboutMeCard>
-    <Card.Text className={appStyles.cardText}>{aboutMeText}</Card.Text>
-  </AboutMeCard>
+  <Card>
+    <p className={appStyles.cardText}>{aboutMeText}</p>
+  </Card>
 );
 
 const AboutMeList: React.FC<{
   items: AboutMeItem[];
   onShowModal: () => void;
 }> = ({ items, onShowModal }) => (
-  <AboutMeCard>
+  <Card>
     <ul className="list-unstyled">
       {items.map((item, index) => (
         <li key={index} className="mb-3">
@@ -45,7 +40,7 @@ const AboutMeList: React.FC<{
         </li>
       ))}
     </ul>
-  </AboutMeCard>
+  </Card>
 );
 
 const AboutMe: React.FC = () => {
