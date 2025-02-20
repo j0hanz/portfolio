@@ -1,7 +1,7 @@
 /* CSS variables for theme customization */
 :root {
   --badge-color: #2d2d2d;
-  --bg-dark: #181818dc;
+  --bg-dark: #181818e5;
   --bg-transparent: transparent;
   --body-bg: #dcdcdc;
   --bs-body-bg: none !important;
