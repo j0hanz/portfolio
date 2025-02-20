@@ -156,28 +156,6 @@
   font-size: 0.7rem;
 }
 
-.customButton {
-  width: 180px;
-  height: 40px;
-  border: none;
-  border-radius: 6.5px;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  max-width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  padding: 0;
-  cursor: pointer;
-}
-
-.customButton:active {
-  transform: scale(0.99);
-}
-
-.customButton:hover {
-  filter: brightness(0.7);
-}
-
 .closeButton {
   position: absolute;
   top: 0;

@@ -24,30 +24,30 @@ const Hero: React.FC = () => {
   const handleImageModalOpen = useCallback(() => setShowImageModal(true), []);
   const handleImageModalClose = useCallback(() => setShowImageModal(false), []);
 
-  const buttonBaseClass = `d-flex align-items-center ${appStyles.customButton}`;
+  const buttonBaseClass = `${styles.heroButton}`;
   const downloadButtonClass = `${buttonBaseClass} my-4 ${styles.downloadButton}`;
   const contactButtonClass = `${buttonBaseClass} ${styles.contactButton}`;
 
   return (
     <section id="hero" className={`text-center ${appStyles.sectionPadding}`}>
       <Container className={appStyles.sectionContainer}>
-        <Row className="d-flex justify-content-center align-items-center">
-          <Col xs="auto">
+        <Row className="d-flex justify-content-center">
+          <Col md={5}>
             <img
               src={Image}
               alt="Linus Johansson"
-              className={`mb-3 rounded-circle ${styles.heroImage}`}
+              className={styles.heroImage}
               onClick={handleImageModalOpen}
             />
+          </Col>
+          <Col xs="auto" className="text-center text-lg-start">
             <div className={styles.gradientText}>Linus Johansson</div>
-
-            <hr className="my-2" />
             <div
-              className={`text-body-secondary fw-semibold ${styles.developerTitle}`}
+              className={`text-body-secondary fw-semibold my-2 ${styles.developerTitle}`}
             >
               Junior Full-Stack Developer
             </div>
-            <div className="d-flex flex-column align-items-center mt-4">
+            <div className="d-flex flex-column align-items-center align-items-lg-start mt-3">
               <Button
                 onClick={handleModalOpen}
                 disabled={loading}
