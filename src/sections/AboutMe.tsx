@@ -3,11 +3,9 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import { HiUser, HiMiniCheckBadge } from 'react-icons/hi2';
 import Credential from '@/components/Credential';
 import Card from '@/components/Card';
-import styles from './styles/AboutMe.module.css';
 import appStyles from '@/App.module.css';
 import aboutMeItems from '@/data/aboutMeItems';
 import aboutMeText from '@/data/aboutMeText';
-import { MotionWrapper } from '@/components/Motions';
 
 interface AboutMeItem {
   title: string;
@@ -16,7 +14,7 @@ interface AboutMeItem {
 }
 
 const AboutMeText: React.FC = () => (
-  <Card>
+  <Card title="Overview">
     <p className={appStyles.cardText}>{aboutMeText}</p>
   </Card>
 );
@@ -25,7 +23,7 @@ const AboutMeList: React.FC<{
   items: AboutMeItem[];
   onShowModal: () => void;
 }> = ({ items, onShowModal }) => (
-  <Card>
+  <Card title="Highlights">
     <ul className="list-unstyled">
       {items.map((item, index) => (
         <li key={index} className="mb-3">
@@ -47,31 +45,26 @@ const AboutMe: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <MotionWrapper sectionId="aboutMe">
-      <section id="about-me" className={appStyles.sectionPadding}>
-        <Container className={appStyles.sectionContainer}>
-          <div className={appStyles.sectionTitleContainer}>
-            <HiUser className={appStyles.mainIcon} />
-            <div className={appStyles.sectionTitle}>About Me</div>
-          </div>
-          <Row>
-            <Col md={6} className="mb-4">
-              <AboutMeText />
-            </Col>
-            <Col md={6} className="mb-4">
-              <AboutMeList
-                items={aboutMeItems}
-                onShowModal={() => setShowModal(true)}
-              />
-            </Col>
-          </Row>
-          <Credential
-            show={showModal}
-            handleClose={() => setShowModal(false)}
-          />
-        </Container>
-      </section>
-    </MotionWrapper>
+    <section id="about-me" className={appStyles.sectionPadding}>
+      <Container className={appStyles.sectionContainer}>
+        <div className={appStyles.sectionTitleContainer}>
+          <HiUser className={appStyles.mainIcon} />
+          <div className={appStyles.sectionTitle}>About Me</div>
+        </div>
+        <Row>
+          <Col md={6} className="mb-4">
+            <AboutMeText />
+          </Col>
+          <Col md={6} className="mb-4">
+            <AboutMeList
+              items={aboutMeItems}
+              onShowModal={() => setShowModal(true)}
+            />
+          </Col>
+        </Row>
+        <Credential show={showModal} handleClose={() => setShowModal(false)} />
+      </Container>
+    </section>
   );
 };
 

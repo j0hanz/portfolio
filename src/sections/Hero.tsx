@@ -6,7 +6,6 @@ import { HiOutlineEnvelope, HiOutlineArrowDownTray } from 'react-icons/hi2';
 import ModalCv from '@/components/ModalCv';
 import ImageModal from '@/components/ImageModal';
 import appStyles from '@/App.module.css';
-import { MotionWrapper } from '@/components/Motions';
 
 const Hero: React.FC = () => {
   const [loading, setLoading] = useState(false);
@@ -30,61 +29,59 @@ const Hero: React.FC = () => {
   const contactButtonClass = `${buttonBaseClass} ${styles.contactButton}`;
 
   return (
-    <MotionWrapper sectionId="hero">
-      <section id="hero" className={`text-center ${appStyles.sectionPadding}`}>
-        <Container className={appStyles.sectionContainer}>
-          <Row className="d-flex justify-content-center align-items-center">
-            <Col xs="auto">
-              <img
-                src={Image}
-                alt="Linus Johansson"
-                className={`mb-3 rounded-circle ${styles.heroImage}`}
-                onClick={handleImageModalOpen}
-              />
-              <div className={styles.gradientText}>Linus Johansson</div>
+    <section id="hero" className={`text-center ${appStyles.sectionPadding}`}>
+      <Container className={appStyles.sectionContainer}>
+        <Row className="d-flex justify-content-center align-items-center">
+          <Col xs="auto">
+            <img
+              src={Image}
+              alt="Linus Johansson"
+              className={`mb-3 rounded-circle ${styles.heroImage}`}
+              onClick={handleImageModalOpen}
+            />
+            <div className={styles.gradientText}>Linus Johansson</div>
 
-              <hr className="my-2" />
-              <div
-                className={`text-body-secondary fw-semibold ${styles.developerTitle}`}
+            <hr className="my-2" />
+            <div
+              className={`text-body-secondary fw-semibold ${styles.developerTitle}`}
+            >
+              Junior Full-Stack Developer
+            </div>
+            <div className="d-flex flex-column align-items-center mt-4">
+              <Button
+                onClick={handleModalOpen}
+                disabled={loading}
+                className={downloadButtonClass}
               >
-                Junior Full-Stack Developer
-              </div>
-              <div className="d-flex flex-column align-items-center mt-4">
-                <Button
-                  onClick={handleModalOpen}
-                  disabled={loading}
-                  className={downloadButtonClass}
-                >
-                  {loading ? (
-                    <Spinner
-                      variant="light"
-                      as="span"
-                      animation="border"
-                      size="sm"
-                      role="status"
-                      aria-hidden="true"
+                {loading ? (
+                  <Spinner
+                    variant="light"
+                    as="span"
+                    animation="border"
+                    size="sm"
+                    role="status"
+                    aria-hidden="true"
+                  />
+                ) : (
+                  <>
+                    <HiOutlineArrowDownTray
+                      className={`${appStyles.buttonIcon} ${styles.buttonIcon}`}
                     />
-                  ) : (
-                    <>
-                      <HiOutlineArrowDownTray
-                        className={`${appStyles.buttonIcon} ${styles.buttonIcon}`}
-                      />
-                      <span className={appStyles.buttonText}>Download CV</span>
-                    </>
-                  )}
-                </Button>
-                <Button href="#contact" className={contactButtonClass}>
-                  <HiOutlineEnvelope className={appStyles.buttonIcon} />
-                  <span className={appStyles.buttonText}>Get in Touch</span>
-                </Button>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-        <ModalCv show={showModal} handleClose={handleModalClose} />
-        <ImageModal show={showImageModal} handleClose={handleImageModalClose} />
-      </section>
-    </MotionWrapper>
+                    <span className={appStyles.buttonText}>Download CV</span>
+                  </>
+                )}
+              </Button>
+              <Button href="#contact" className={contactButtonClass}>
+                <HiOutlineEnvelope className={appStyles.buttonIcon} />
+                <span className={appStyles.buttonText}>Get in Touch</span>
+              </Button>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+      <ModalCv show={showModal} handleClose={handleModalClose} />
+      <ImageModal show={showImageModal} handleClose={handleImageModalClose} />
+    </section>
   );
 };
 

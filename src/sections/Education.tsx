@@ -11,7 +11,6 @@ import Card from '@/components/Card';
 import styles from './styles/Education.module.css';
 import appStyles from '@/App.module.css';
 import education from '@/data/education';
-import { MotionWrapper } from '@/components/Motions';
 
 interface EducationItem {
   title: string;
@@ -59,20 +58,18 @@ const Education: React.FC = () => {
   );
 
   return (
-    <MotionWrapper sectionId="education">
-      <section id="education" className={appStyles.sectionPadding}>
-        <Container className={appStyles.sectionContainer}>
-          <div className={appStyles.sectionTitleContainer}>
-            <div>
-              <HiAcademicCap className={appStyles.mainIcon} />
-            </div>
-            <div className={appStyles.sectionTitle}>Education</div>
+    <section id="education" className={appStyles.sectionPadding}>
+      <Container className={appStyles.sectionContainer}>
+        <div className={appStyles.sectionTitleContainer}>
+          <div>
+            <HiAcademicCap className={appStyles.mainIcon} />
           </div>
-          <Row>{education.map(renderEducationItem)}</Row>
-          <Credential show={showModal} handleClose={toggleModal} />
-        </Container>
-      </section>
-    </MotionWrapper>
+          <div className={appStyles.sectionTitle}>Education</div>
+        </div>
+        <Row>{education.map(renderEducationItem)}</Row>
+        <Credential show={showModal} handleClose={toggleModal} />
+      </Container>
+    </section>
   );
 };
 

@@ -12,29 +12,19 @@ interface MotionWrapperProps extends MotionProps {
   sectionId: keyof typeof motionVariants;
 }
 
+const defaultVariant = {
+  initial: { opacity: 0, y: 95 },
+  whileInView: { opacity: 1, y: 0 },
+};
+
 const motionVariants = {
   hero: { initial: { opacity: 0 }, whileInView: { opacity: 1 } },
-  aboutMe: {
-    initial: { opacity: 0, y: 95 },
-    whileInView: { opacity: 1, y: 0 },
-  },
-  education: {
-    initial: { opacity: 0, y: 95 },
-    whileInView: { opacity: 1, y: 0 },
-  },
-  skills: { initial: { opacity: 0, y: 95 }, whileInView: { opacity: 1, y: 0 } },
-  portfolio: {
-    initial: { opacity: 0, y: 95 },
-    whileInView: { opacity: 1, y: 0 },
-  },
-  workExperience: {
-    initial: { opacity: 0, y: 95 },
-    whileInView: { opacity: 1, y: 0 },
-  },
-  contact: {
-    initial: { opacity: 0, y: 95 },
-    whileInView: { opacity: 1, y: 0 },
-  },
+  aboutMe: defaultVariant,
+  education: defaultVariant,
+  skills: defaultVariant,
+  portfolio: defaultVariant,
+  workExperience: defaultVariant,
+  contact: defaultVariant,
 };
 
 const MotionWrapper: FC<MotionWrapperProps> = ({
@@ -52,4 +42,4 @@ const MotionWrapper: FC<MotionWrapperProps> = ({
   </motion.div>
 );
 
-export { MotionWrapper };
+export { MotionWrapper, motionVariants };

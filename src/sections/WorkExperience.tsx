@@ -9,7 +9,6 @@ import Card from '@/components/Card';
 import styles from './styles/WorkExperience.module.css';
 import appStyles from '@/App.module.css';
 import experiences from '@/data/experiences';
-import { MotionWrapper } from '@/components/Motions';
 
 interface Experience {
   title: string;
@@ -50,19 +49,17 @@ const WorkExperience: React.FC = () => {
   );
 
   return (
-    <MotionWrapper sectionId="workExperience">
-      <section id="work-experience" className={appStyles.sectionPadding}>
-        <Container className={appStyles.sectionContainer}>
-          <div className={appStyles.sectionTitleContainer}>
-            <div>
-              <HiBriefcase className={appStyles.mainIcon} />
-            </div>
-            <div className={appStyles.sectionTitle}>Experience</div>
+    <section id="work-experience" className={appStyles.sectionPadding}>
+      <Container className={appStyles.sectionContainer}>
+        <div className={appStyles.sectionTitleContainer}>
+          <div>
+            <HiBriefcase className={appStyles.mainIcon} />
           </div>
-          <Row>{experiences.map(renderExperience)}</Row>
-        </Container>
-      </section>
-    </MotionWrapper>
+          <div className={appStyles.sectionTitle}>Experience</div>
+        </div>
+        <Row>{experiences.map(renderExperience)}</Row>
+      </Container>
+    </section>
   );
 };
 

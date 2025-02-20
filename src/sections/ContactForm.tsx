@@ -20,7 +20,6 @@ import { validateForm } from '@/utils/validation';
 import { toast } from 'react-toastify';
 import FormContact from '@/form/contact';
 import Badge from '@/components/Badges';
-import { MotionWrapper } from '@/components/Motions';
 
 interface FormData {
   name: string;
@@ -83,74 +82,69 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <MotionWrapper sectionId="contact">
-      <section id="contact" className={appStyles.sectionPadding}>
-        <Container className={appStyles.sectionContainer}>
-          <div className={appStyles.sectionTitleContainer}>
-            <div>
-              <HiEnvelope className={appStyles.mainIcon} />
-            </div>
-            <div className={appStyles.sectionTitle}>Contact</div>
+    <section id="contact" className={appStyles.sectionPadding}>
+      <Container className={appStyles.sectionContainer}>
+        <div className={appStyles.sectionTitleContainer}>
+          <div>
+            <HiEnvelope className={appStyles.mainIcon} />
           </div>
-          <Row className="d-flex justify-content-center align-items-center">
-            <Col md={9}>
-              <Card className={`h-100 ${appStyles.cardBgColor}`}>
-                <Card.Body className={appStyles.formBody}>
-                  <Form noValidate onSubmit={handleSubmit}>
-                    <FormContact
-                      formData={formData}
-                      errors={errors}
-                      handleChange={handleChange}
-                    />
-                    <div className="d-flex justify-content-between mt-3 p-2">
-                      <Button
-                        className={styles.clearButton}
-                        type="button"
-                        onClick={handleReset}
-                        disabled={isSending}
-                      >
-                        <HiOutlineTrash className={styles.buttonIconClear} />
-                      </Button>
+          <div className={appStyles.sectionTitle}>Contact</div>
+        </div>
+        <Row className="d-flex justify-content-center align-items-center">
+          <Col md={9}>
+            <Card className={`h-100 ${appStyles.cardBgColor}`}>
+              <Card.Body className={appStyles.formBody}>
+                <Form noValidate onSubmit={handleSubmit}>
+                  <FormContact
+                    formData={formData}
+                    errors={errors}
+                    handleChange={handleChange}
+                  />
+                  <div className="d-flex justify-content-between mt-3 p-2">
+                    <Button
+                      className={styles.clearButton}
+                      type="button"
+                      onClick={handleReset}
+                      disabled={isSending}
+                    >
+                      <HiOutlineTrash className={styles.buttonIconClear} />
+                    </Button>
 
-                      <Button
-                        className={styles.submitButton}
-                        type="submit"
-                        disabled={isSending}
-                      >
-                        {isSending ? (
-                          <Spinner
-                            variant="light"
-                            as="span"
-                            animation="border"
-                            size="sm"
-                            role="status"
-                            aria-hidden="true"
+                    <Button
+                      className={styles.submitButton}
+                      type="submit"
+                      disabled={isSending}
+                    >
+                      {isSending ? (
+                        <Spinner
+                          variant="light"
+                          as="span"
+                          animation="border"
+                          size="sm"
+                          role="status"
+                          aria-hidden="true"
+                        />
+                      ) : (
+                        <>
+                          <HiOutlinePaperAirplane
+                            className={styles.buttonIcon}
                           />
-                        ) : (
-                          <>
-                            <HiOutlinePaperAirplane
-                              className={styles.buttonIcon}
-                            />
-                            <span className={styles.buttonText}>Send</span>
-                          </>
-                        )}
-                      </Button>
-                    </div>
-                  </Form>
-                </Card.Body>
-              </Card>
-              {validated && (
-                <EmailHandler
-                  formData={formData}
-                  onEmailSent={handleEmailSent}
-                />
-              )}
-              <Badge />
-            </Col>
-          </Row>
-        </Container>
-      </section>
-    </MotionWrapper>
+                          <span className={styles.buttonText}>Send</span>
+                        </>
+                      )}
+                    </Button>
+                  </div>
+                </Form>
+              </Card.Body>
+            </Card>
+            {validated && (
+              <EmailHandler formData={formData} onEmailSent={handleEmailSent} />
+            )}
+            <Badge />
+          </Col>
+        </Row>
+      </Container>
+    </section>
   );
 };
 

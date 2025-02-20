@@ -3,6 +3,7 @@ import NavBar from '@/components/NavBar';
 import Spinner from '@/components/Spinner';
 import Toast from '@/components/Toast';
 import useLoading from '@/hooks/useLoading';
+import SectionWrapper from '@/components/SectionWrapper';
 import styles from '@/App.module.css';
 
 const Hero = lazy(() => import('@/sections/Hero'));
@@ -20,13 +21,27 @@ const MainContent: React.FC<{ loading: boolean }> = ({ loading }) => (
       <Spinner />
     ) : (
       <Suspense fallback={<Spinner />}>
-        <Hero />
-        <AboutMe />
-        <Education />
-        <Skills />
-        <Portfolio />
-        <WorkExperience />
-        <ContactForm />
+        <SectionWrapper sectionId="hero">
+          <Hero />
+        </SectionWrapper>
+        <SectionWrapper sectionId="aboutMe">
+          <AboutMe />
+        </SectionWrapper>
+        <SectionWrapper sectionId="education">
+          <Education />
+        </SectionWrapper>
+        <SectionWrapper sectionId="skills">
+          <Skills />
+        </SectionWrapper>
+        <SectionWrapper sectionId="portfolio">
+          <Portfolio />
+        </SectionWrapper>
+        <SectionWrapper sectionId="workExperience">
+          <WorkExperience />
+        </SectionWrapper>
+        <SectionWrapper sectionId="contact">
+          <ContactForm />
+        </SectionWrapper>
         <Footer />
       </Suspense>
     )}

@@ -5,7 +5,6 @@ import Card from '@/components/Card';
 import styles from './styles/Skills.module.css';
 import appStyles from '@/App.module.css';
 import skills from '@/data/skills';
-import { MotionWrapper } from '@/components/Motions';
 
 interface Skill {
   icon: React.ElementType;
@@ -22,19 +21,17 @@ const Skills: React.FC = () => {
   );
 
   return (
-    <MotionWrapper sectionId="skills">
-      <section id="skills" className={appStyles.sectionPadding}>
-        <Container className={appStyles.sectionContainer}>
-          <div className={appStyles.sectionTitleContainer}>
-            <div>
-              <HiMiniCog8Tooth className={appStyles.mainIcon} />
-            </div>
-            <div className={appStyles.sectionTitle}>Skills</div>
+    <section id="skills" className={appStyles.sectionPadding}>
+      <Container className={appStyles.sectionContainer}>
+        <div className={appStyles.sectionTitleContainer}>
+          <div>
+            <HiMiniCog8Tooth className={appStyles.mainIcon} />
           </div>
-          <Row>{skills.map(renderSkill)}</Row>
-        </Container>
-      </section>
-    </MotionWrapper>
+          <div className={appStyles.sectionTitle}>Skills</div>
+        </div>
+        <Row>{skills.map(renderSkill)}</Row>
+      </Container>
+    </section>
   );
 };
 
