@@ -52,10 +52,10 @@ const AboutMe: React.FC = () => {
           <div className={appStyles.sectionTitle}>About Me</div>
         </div>
         <Row>
-          <Col md={6} className="mb-4">
+          <Col lg={6} className="mb-4">
             <AboutMeText />
           </Col>
-          <Col md={6} className="mb-4">
+          <Col lg={6} className="mb-4">
             <AboutMeList
               items={aboutMeItems}
               onShowModal={() => setShowModal(true)}
