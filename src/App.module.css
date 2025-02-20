@@ -32,6 +32,7 @@
 
 .certificateIcon {
   color: var(--certificate-color);
+  font-size: 1.15rem;
 }
 
 .sourceCodeIcon {
@@ -219,20 +220,25 @@
 }
 
 .btnCredential {
-  cursor: pointer;
-  line-height: 0;
+  max-width: 100%;
+  height: 30px;
   border: none;
   border-radius: 6.5px;
-  transition: all 0.5s ease;
+  transition: all 0.2s ease;
+  transform: skew(-10deg);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-image: var(--btn-bg-dark);
 }
 
 .btnCredential:hover {
-  filter: brightness(0.5);
+  filter: brightness(0.7);
 }
 
 .btnCredential:active {
-  transform: scale(0.99);
+  transform: skew(-10deg) scale(0.98);
 }
 
 /* Responsive Adjustments */

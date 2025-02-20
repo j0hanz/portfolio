@@ -9,7 +9,7 @@
 }
 
 .heroImage:hover {
-  filter: brightness(0.9);
+  filter: brightness(0.7);
   transform: scale(1.02);
 }
 
@@ -48,7 +48,7 @@
 }
 
 .heroButton:hover {
-  filter: brightness(0.9);
+  filter: brightness(0.7);
 }
 
 .downloadButton {
