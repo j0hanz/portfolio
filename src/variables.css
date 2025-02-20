@@ -1,3 +1,6 @@
+/* Importing the Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
 /* CSS variables for theme customization */
 :root {
   --badge-color: #2d2d2d;
@@ -30,9 +33,9 @@
   --nav-link-color: #e6e6e6;
   --nav-link-hover-color: #40a9ff;
   --pdf-color: #dc1a1a;
-  --scrollbar-thumb-gradient: #cccccc;
-  --scrollbar-thumb-hover-gradient: #8a8a8a;
-  --scrollbar-track-gradient: #171717;
+  --scrollbar-thumb: #cccccc;
+  --scrollbar-thumb-hover: #8a8a8a;
+  --scrollbar-track: #171717;
   --section-title-color: #2d2d2d;
   --source-code-color: #3fb950;
   --spinner-color: linear-gradient(
@@ -74,26 +77,22 @@ body {
 }
 
 *::-webkit-scrollbar {
-  width: 0.7rem;
+  width: 0.8rem;
 }
 
 *::-webkit-scrollbar-thumb {
-  background: var(--scrollbar-thumb-gradient);
+  background: var(--scrollbar-thumb);
   box-shadow:
     inset 0 0 5px rgba(0, 0, 0, 0.3),
     0 0 5px rgba(0, 0, 0, 0.4);
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   border-radius: 2px;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-  background: var(--scrollbar-thumb-hover-gradient);
-  box-shadow:
-    inset 0 0 5px rgba(0, 0, 0, 0.4),
-    0 0 5px rgba(0, 0, 0, 0.5);
+  background: var(--scrollbar-thumb-hover);
 }
 
 *::-webkit-scrollbar-track {
-  background: var(--scrollbar-track-gradient);
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+  background: var(--scrollbar-track);
 }
