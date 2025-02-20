@@ -15,7 +15,7 @@ const Skills: React.FC = () => {
   const renderSkill = (skill: Skill, index: number) => (
     <Col md={3} sm={6} xs={6} key={index} className="text-center mb-4">
       <Card title={skill.label} className={styles.skillCard}>
-        <skill.icon className={`mt-1 ${styles.skillIcon}`} />
+        <skill.icon className={`my-1 ${styles.skillIcon}`} />
       </Card>
     </Col>
   );
