@@ -6,6 +6,7 @@ import { HiOutlineEnvelope, HiOutlineArrowDownTray } from 'react-icons/hi2';
 import ModalCv from '@/components/ModalCv';
 import ImageModal from '@/components/ImageModal';
 import appStyles from '@/App.module.css';
+import { SlideFromSide } from '@/components/Motions';
 
 const Hero: React.FC = () => {
   const [loading, setLoading] = useState(false);
@@ -33,49 +34,53 @@ const Hero: React.FC = () => {
       <Container className={appStyles.sectionContainer}>
         <Row className="d-flex justify-content-center">
           <Col md={5}>
-            <img
-              src={Image}
-              alt="Linus Johansson"
-              className={styles.heroImage}
-              onClick={handleImageModalOpen}
-            />
+            <SlideFromSide from="left">
+              <img
+                src={Image}
+                alt="Linus Johansson"
+                className={styles.heroImage}
+                onClick={handleImageModalOpen}
+              />
+            </SlideFromSide>
           </Col>
           <Col xs="auto" className="text-center text-lg-start">
-            <div className={styles.gradientText}>Linus Johansson</div>
-            <div
-              className={`text-body-secondary fw-semibold my-2 ${styles.developerTitle}`}
-            >
-              Junior Full-Stack Developer
-            </div>
-            <div className="d-flex flex-column align-items-center align-items-lg-start mt-3">
-              <Button
-                onClick={handleModalOpen}
-                disabled={loading}
-                className={downloadButtonClass}
+            <SlideFromSide from="right">
+              <div className={styles.gradientText}>Linus Johansson</div>
+              <div
+                className={`text-body-secondary fw-semibold my-2 ${styles.developerTitle}`}
               >
-                {loading ? (
-                  <Spinner
-                    variant="light"
-                    as="span"
-                    animation="border"
-                    size="sm"
-                    role="status"
-                    aria-hidden="true"
-                  />
-                ) : (
-                  <>
-                    <HiOutlineArrowDownTray
-                      className={`${appStyles.buttonIcon} ${styles.buttonIcon}`}
+                Junior Full-Stack Developer
+              </div>
+              <div className="d-flex flex-column align-items-center align-items-lg-start mt-3">
+                <Button
+                  onClick={handleModalOpen}
+                  disabled={loading}
+                  className={downloadButtonClass}
+                >
+                  {loading ? (
+                    <Spinner
+                      variant="light"
+                      as="span"
+                      animation="border"
+                      size="sm"
+                      role="status"
+                      aria-hidden="true"
                     />
-                    <span className={appStyles.buttonText}>Download CV</span>
-                  </>
-                )}
-              </Button>
-              <Button href="#contact" className={contactButtonClass}>
-                <HiOutlineEnvelope className={appStyles.buttonIcon} />
-                <span className={appStyles.buttonText}>Get in Touch</span>
-              </Button>
-            </div>
+                  ) : (
+                    <>
+                      <HiOutlineArrowDownTray
+                        className={`${appStyles.buttonIcon} ${styles.buttonIcon}`}
+                      />
+                      <span className={appStyles.buttonText}>Download CV</span>
+                    </>
+                  )}
+                </Button>
+                <Button href="#contact" className={contactButtonClass}>
+                  <HiOutlineEnvelope className={appStyles.buttonIcon} />
+                  <span className={appStyles.buttonText}>Get in Touch</span>
+                </Button>
+              </div>
+            </SlideFromSide>
           </Col>
         </Row>
       </Container>
