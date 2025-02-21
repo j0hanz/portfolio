@@ -10,6 +10,7 @@ export interface Project {
   api: boolean;
   gitpod_template?: boolean;
   isNew?: boolean;
+  projectBoard?: boolean;
 }
 
 const projects: Project[] = [
@@ -32,6 +33,8 @@ const projects: Project[] = [
     isHackathon_3: false,
     api: false,
     isNew: true,
+    gitpod_template: false,
+    projectBoard: false,
   },
   {
     title: 'Magic December',
@@ -46,6 +49,7 @@ const projects: Project[] = [
     api: false,
     isNew: false,
     gitpod_template: false,
+    projectBoard: true,
   },
   {
     title: 'Script to Sound',
@@ -68,6 +72,7 @@ const projects: Project[] = [
     api: false,
     isNew: false,
     gitpod_template: false,
+    projectBoard: true,
   },
   {
     title: 'Portfolio',
@@ -90,6 +95,7 @@ const projects: Project[] = [
     api: false,
     isNew: false,
     gitpod_template: false,
+    projectBoard: false,
   },
   {
     title: 'SonataCraft',
@@ -115,6 +121,7 @@ const projects: Project[] = [
     api: false,
     isNew: false,
     gitpod_template: false,
+    projectBoard: true,
   },
   {
     title: 'j0hanz-gitpod-template',
@@ -152,6 +159,7 @@ const projects: Project[] = [
     api: false,
     isNew: false,
     gitpod_template: false,
+    projectBoard: true,
   },
   {
     title: 'Blog Beat API',
@@ -174,6 +182,7 @@ const projects: Project[] = [
     api: true,
     isNew: false,
     gitpod_template: false,
+    projectBoard: true,
   },
   {
     title: 'Tech Corner',
@@ -198,6 +207,7 @@ const projects: Project[] = [
     api: false,
     isNew: false,
     gitpod_template: false,
+    projectBoard: true,
   },
   {
     title: 'Pick my Spell',
@@ -212,6 +222,7 @@ const projects: Project[] = [
     api: false,
     isNew: false,
     gitpod_template: false,
+    projectBoard: false,
   },
   {
     title: 'Fix my Spell',
@@ -226,6 +237,7 @@ const projects: Project[] = [
     api: false,
     isNew: false,
     gitpod_template: false,
+    projectBoard: false,
   },
 ];
 
