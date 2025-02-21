@@ -14,6 +14,7 @@ import {
   SiTypescript,
   SiNextdotjs,
   SiTailwindcss,
+  SiVite,
 } from 'react-icons/si';
 
 interface Skill {
@@ -31,11 +32,12 @@ const skills: Skill[] = [
   { icon: SiHtml5, label: 'HTML5' },
   { icon: SiJavascript, label: 'JavaScript' },
   { icon: SiNodedotjs, label: 'Node.js' },
-  { icon: SiNextdotjs, label: 'Next.js', learning: true },
   { icon: SiPostgresql, label: 'PostgreSQL' },
   { icon: SiPython, label: 'Python' },
   { icon: SiReact, label: 'React.js' },
   { icon: SiTypescript, label: 'Typescript' },
+  { icon: SiVite, label: 'Vite' },
+  { icon: SiNextdotjs, label: 'Next.js', learning: true },
   { icon: SiTailwindcss, label: 'Tailwind CSS', learning: true },
 ];
 
