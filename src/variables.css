@@ -70,6 +70,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: var(--text-color);
   background: var(--body-bg);
+  -webkit-tap-highlight-color: transparent;
 }
 
 *::-webkit-scrollbar {
