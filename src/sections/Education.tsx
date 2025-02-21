@@ -42,15 +42,19 @@ const Education: React.FC = () => {
         }
       >
         {edu.description && (
-          <p className={appStyles.cardText}>
+          <div className={appStyles.cardText}>
             {edu.description.map((desc, i) => (
-              <p key={i}>{desc}</p>
+              <div key={i}>{desc}</div>
             ))}
-          </p>
+          </div>
         )}
         {edu.hasCredential && (
-          <Button onClick={toggleModal} className={appStyles.btnCredential}>
-            <HiMiniCheckBadge className={appStyles.certificateIcon} />
+          <Button
+            onClick={toggleModal}
+            className={`${appStyles.btnCredential} mt-2`}
+          >
+            <HiMiniCheckBadge className={styles.buttonIcon} />
+            <span className={styles.buttonText}>Credential</span>
           </Button>
         )}
       </Card>
