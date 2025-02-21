@@ -43,7 +43,7 @@ const Education: React.FC = () => {
         }
       >
         {edu.description && (
-          <div className={appStyles.cardText}>
+          <div className={`${appStyles.cardText} mb-2`}>
             {edu.description.map((desc, i) => (
               <div key={i}>{desc}</div>
             ))}
