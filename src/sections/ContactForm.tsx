@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, FormEvent } from 'react';
+import React, { useState, useCallback, ChangeEvent, FormEvent } from 'react';
 import { Container, Row, Col, Form, Spinner, Card } from 'react-bootstrap';
 import {
   HiOutlineTrash,
@@ -41,13 +41,14 @@ const ContactForm: React.FC = () => {
   });
   const [errors, setErrors] = useState<FormErrors>({});
 
-  const handleChange = (
-    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    setFormData({ ...formData, [event.target.name]: event.target.value });
-  };
+  const handleChange = useCallback(
+    (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setFormData({ ...formData, [event.target.name]: event.target.value });
+    },
+    [formData],
+  );
 
-  const handleEmailSent = (success: boolean) => {
+  const handleEmailSent = useCallback((success: boolean) => {
     setIsSending(false);
     if (success) {
       setFormData({ name: '', email: '', company: '', url: '', message: '' });
@@ -55,24 +56,27 @@ const ContactForm: React.FC = () => {
     } else {
       toast.error('Failed to send message! Please try again later.');
     }
-  };
+  }, []);
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const newErrors = validateForm(formData);
-    setErrors(newErrors);
-    const formValid = Object.keys(newErrors).length === 0;
-    setValidated(formValid);
-    if (formValid) {
-      setIsSending(true);
-    }
-  };
+  const handleSubmit = useCallback(
+    (event: FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+      const newErrors = validateForm(formData);
+      setErrors(newErrors);
+      const formValid = Object.keys(newErrors).length === 0;
+      setValidated(formValid);
+      if (formValid) {
+        setIsSending(true);
+      }
+    },
+    [formData],
+  );
 
-  const handleReset = () => {
+  const handleReset = useCallback(() => {
     setFormData({ name: '', email: '', company: '', url: '', message: '' });
     setErrors({});
     setValidated(false);
-  };
+  }, []);
 
   return (
     <section id="contact" className={appStyles.sectionPadding}>

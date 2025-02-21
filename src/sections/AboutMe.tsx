@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { HiUser, HiMiniCheckBadge } from 'react-icons/hi2';
 import Credential from '@/components/Credential';
@@ -48,6 +48,8 @@ const AboutMeList: React.FC<{
 
 const AboutMe: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
+  const handleShowModal = useCallback(() => setShowModal(true), []);
+  const handleCloseModal = useCallback(() => setShowModal(false), []);
 
   return (
     <section id="about-me" className={appStyles.sectionPadding}>
@@ -61,13 +63,10 @@ const AboutMe: React.FC = () => {
             <AboutMeText />
           </Col>
           <Col lg={6} className="mb-4">
-            <AboutMeList
-              items={aboutMeItems}
-              onShowModal={() => setShowModal(true)}
-            />
+            <AboutMeList items={aboutMeItems} onShowModal={handleShowModal} />
           </Col>
         </Row>
-        <Credential show={showModal} handleClose={() => setShowModal(false)} />
+        <Credential show={showModal} handleClose={handleCloseModal} />
       </Container>
     </section>
   );

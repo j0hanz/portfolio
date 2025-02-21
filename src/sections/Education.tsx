@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import {
   HiAcademicCap,
@@ -23,7 +23,8 @@ interface EducationItem {
 
 const Education: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
-  const toggleModal = () => setShowModal((prevShowModal) => !prevShowModal);
+  const handleShowModal = useCallback(() => setShowModal(true), []);
+  const handleCloseModal = useCallback(() => setShowModal(false), []);
 
   const renderEducationItem = (edu: EducationItem, index: number) => (
     <Col lg={6} className="mb-4" key={index}>
@@ -51,7 +52,7 @@ const Education: React.FC = () => {
         )}
         {edu.hasCredential && (
           <Button
-            onClick={toggleModal}
+            onClick={handleShowModal}
             className={`${styles.customButton} ${styles.credentialButton}`}
             icon={<HiMiniCheckBadge className={styles.buttonIcon} />}
             text="Credential"
@@ -71,7 +72,7 @@ const Education: React.FC = () => {
           <div className={appStyles.sectionTitle}>Education</div>
         </div>
         <Row>{education.map(renderEducationItem)}</Row>
-        <Credential show={showModal} handleClose={toggleModal} />
+        <Credential show={showModal} handleClose={handleCloseModal} />
       </Container>
     </section>
   );
