@@ -47,13 +47,8 @@
   --text-color: #1d1d1d;
   --text-hero: linear-gradient(180deg, #015180 25%, #015180 50%, #4b89cc 75%);
   --text-light: #f5f4f4;
-  --btn-bg-dark: linear-gradient(180deg, #383838 0%, #282828 50%, #181818 100%);
-  --btn-bg-primary: linear-gradient(
-    180deg,
-    #0284d4 0%,
-    #0169b2 50%,
-    #015180 100%
-  );
+  --btn-bg-dark: #282828;
+  --btn-bg-primary: #0169b2;
   --btn-icon-color: #f2f2f2;
   --btn-close-color: #f2f2f2;
   --toast-bg: linear-gradient(
