@@ -7,6 +7,7 @@ import styles from './styles/Footer.module.css';
 import ModalCv from './ModalCv';
 import appStyles from '../App.module.css';
 import { socialLinks } from '../data/socialLinks';
+import Button from '@/components/Button';
 
 const Footer: FC = () => {
   const [showModal, setShowModal] = useState<boolean>(false);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Card, Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Col, Card, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import {
   HiMiniUser,
   HiMiniUserGroup,
@@ -14,6 +14,7 @@ import hackathonBadge from '@/assets/hackathonBadge.webp';
 import hackathonBadge3 from '@/assets/hackathonBadgeThirdPlace.webp';
 import gitpodLogo from '@/assets/gitpod.webp';
 import { Project } from '@/data/projects';
+import Button from '@/components/Button';
 
 interface ProjectListProps {
   project: Project;
@@ -84,20 +85,22 @@ const ProjectList: React.FC<ProjectListProps> = ({ project, index }) => {
               href={project.github}
               target="_blank"
               className={`${styles.customButton} ${styles.githubButton}`}
-            >
-              <FontAwesomeIcon icon={faGithub} className={styles.buttonIcon} />
-              <span className={styles.buttonText}>GitHub</span>
-            </Button>
-
+              icon={
+                <FontAwesomeIcon
+                  icon={faGithub}
+                  className={styles.buttonIcon}
+                />
+              }
+              text="GitHub"
+            />
             {project.demo ? (
               <Button
                 href={project.demo}
                 target="_blank"
                 className={`${styles.customButton} ${styles.demoButton}`}
-              >
-                <HiMiniPlay className={styles.buttonIcon} />
-                <span className={styles.buttonText}>Demo</span>
-              </Button>
+                icon={<HiMiniPlay className={styles.buttonIcon} />}
+                text="Demo"
+              />
             ) : (
               <OverlayTrigger
                 placement="bottom"
@@ -114,10 +117,9 @@ const ProjectList: React.FC<ProjectListProps> = ({ project, index }) => {
                   <Button
                     disabled
                     className={`${styles.customButton} ${styles.demoButton}`}
-                  >
-                    <HiMiniPlay className={styles.buttonIcon} />
-                    <span className={styles.buttonText}>Demo</span>
-                  </Button>
+                    icon={<HiMiniPlay className={styles.buttonIcon} />}
+                    text="Demo"
+                  />
                 </span>
               </OverlayTrigger>
             )}

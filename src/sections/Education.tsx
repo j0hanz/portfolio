@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import {
   HiAcademicCap,
   HiMiniCheckBadge,
@@ -11,6 +11,7 @@ import Card from '@/components/Card';
 import styles from './styles/Education.module.css';
 import appStyles from '@/App.module.css';
 import education from '@/data/education';
+import Button from '@/components/Button';
 
 interface EducationItem {
   title: string;
@@ -51,11 +52,10 @@ const Education: React.FC = () => {
         {edu.hasCredential && (
           <Button
             onClick={toggleModal}
-            className={`${appStyles.btnCredential} mt-2`}
-          >
-            <HiMiniCheckBadge className={styles.buttonIcon} />
-            <span className={styles.buttonText}>Credential</span>
-          </Button>
+            className={`${styles.customButton} ${styles.credentialButton}`}
+            icon={<HiMiniCheckBadge className={styles.buttonIcon} />}
+            text="Credential"
+          />
         )}
       </Card>
     </Col>

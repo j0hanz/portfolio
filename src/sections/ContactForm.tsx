@@ -1,13 +1,5 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
-import {
-  Container,
-  Row,
-  Col,
-  Form,
-  Button,
-  Spinner,
-  Card,
-} from 'react-bootstrap';
+import { Container, Row, Col, Form, Spinner, Card } from 'react-bootstrap';
 import {
   HiOutlineTrash,
   HiOutlinePaperAirplane,
@@ -20,6 +12,7 @@ import { validateForm } from '@/utils/validation';
 import { toast } from 'react-toastify';
 import FormContact from '@/form/contact';
 import Badge from '@/components/Badges';
+import Button from '@/components/Button';
 
 interface FormData {
   name: string;
@@ -106,33 +99,32 @@ const ContactForm: React.FC = () => {
                       type="button"
                       onClick={handleReset}
                       disabled={isSending}
-                    >
-                      <HiOutlineTrash className={styles.buttonIconClear} />
-                    </Button>
-
+                      icon={
+                        <HiOutlineTrash className={styles.buttonIconClear} />
+                      }
+                    />
                     <Button
                       className={styles.submitButton}
                       type="submit"
                       disabled={isSending}
-                    >
-                      {isSending ? (
-                        <Spinner
-                          variant="light"
-                          as="span"
-                          animation="border"
-                          size="sm"
-                          role="status"
-                          aria-hidden="true"
-                        />
-                      ) : (
-                        <>
+                      icon={
+                        isSending ? (
+                          <Spinner
+                            variant="light"
+                            as="span"
+                            animation="border"
+                            size="sm"
+                            role="status"
+                            aria-hidden="true"
+                          />
+                        ) : (
                           <HiOutlinePaperAirplane
                             className={styles.buttonIcon}
                           />
-                          <span className={styles.buttonText}>Send</span>
-                        </>
-                      )}
-                    </Button>
+                        )
+                      }
+                      text={isSending ? '' : 'Send'}
+                    />
                   </div>
                 </Form>
               </Card.Body>

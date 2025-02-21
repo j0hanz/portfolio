@@ -54,7 +54,7 @@
 }
 
 .submitButton {
-  width: 95px;
+  width: 100px;
   max-width: 100%;
   height: 32px;
   border: none;
@@ -64,12 +64,11 @@
   transform: skew(-10deg);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   background-image: var(--btn-bg-primary);
 }
 
 .buttonIcon {
-  margin-right: 10px;
   font-size: 0.9rem;
   color: var(--btn-icon-color);
 }
@@ -93,16 +92,16 @@
 }
 
 .clearButton {
-  background-image: var(--btn-bg-dark);
+  width: 50px;
   max-width: 100%;
   height: 32px;
   border: none;
   border-radius: 6.5px;
   transition: all 0.2s ease;
-  text-transform: uppercase;
+  transform: skew(-10deg);
   display: flex;
   align-items: center;
-  justify-content: center;
+  background-image: var(--btn-bg-dark);
 }
 
 .clearButton:hover {
@@ -110,5 +109,5 @@
 }
 
 .clearButton:active {
-  transform: scale(0.96);
+  transform: skew(-10deg) scale(0.96);
 }

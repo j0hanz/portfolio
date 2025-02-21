@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { HiUser, HiMiniCheckBadge } from 'react-icons/hi2';
 import Credential from '@/components/Credential';
 import Card from '@/components/Card';
@@ -7,6 +7,7 @@ import appStyles from '@/App.module.css';
 import aboutMeItems from '@/data/aboutMeItems';
 import aboutMeText from '@/data/aboutMeText';
 import styles from './styles/AboutMe.module.css';
+import Button from '@/components/Button';
 
 interface AboutMeItem {
   title: string;
@@ -33,11 +34,10 @@ const AboutMeList: React.FC<{
             <div className="mt-2">
               <Button
                 onClick={onShowModal}
-                className={`${appStyles.btnCredential} mt-2`}
-              >
-                <HiMiniCheckBadge className={styles.buttonIcon} />
-                <span className={styles.buttonText}>Credential</span>
-              </Button>
+                className={`${styles.customButton} ${styles.credentialButton}`}
+                icon={<HiMiniCheckBadge className={styles.buttonIcon} />}
+                text="Credential"
+              />
             </div>
           )}
         </li>

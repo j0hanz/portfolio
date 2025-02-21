@@ -15,6 +15,7 @@ import navLogo from '@/assets/imgBg.webp';
 import appStyles from '@/App.module.css';
 import { socialLinks } from '@/data/socialLinks';
 import { navLinks } from '@/data/navLinks';
+import Button from '@/components/Button';
 
 const NavBar: React.FC = () => {
   const {

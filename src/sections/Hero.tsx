@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { Container, Row, Col, Spinner, Button } from 'react-bootstrap';
+import { Container, Row, Col, Spinner } from 'react-bootstrap';
 import Image from '@/assets/image_me.webp';
 import styles from './styles/Hero.module.css';
 import { HiOutlineEnvelope, HiOutlineArrowDownTray } from 'react-icons/hi2';
@@ -7,6 +7,7 @@ import ModalCv from '@/components/ModalCv';
 import ImageModal from '@/components/ImageModal';
 import appStyles from '@/App.module.css';
 import { SlideFromSide } from '@/components/Motions';
+import Button from '@/components/Button';
 
 const Hero: React.FC = () => {
   const [loading, setLoading] = useState(false);
@@ -56,29 +57,30 @@ const Hero: React.FC = () => {
                   onClick={handleModalOpen}
                   disabled={loading}
                   className={downloadButtonClass}
-                >
-                  {loading ? (
-                    <Spinner
-                      variant="light"
-                      as="span"
-                      animation="border"
-                      size="sm"
-                      role="status"
-                      aria-hidden="true"
-                    />
-                  ) : (
-                    <>
+                  icon={
+                    loading ? (
+                      <Spinner
+                        variant="light"
+                        as="span"
+                        animation="border"
+                        size="sm"
+                        role="status"
+                        aria-hidden="true"
+                      />
+                    ) : (
                       <HiOutlineArrowDownTray
                         className={`${appStyles.buttonIcon} ${styles.buttonIcon}`}
                       />
-                      <span className={appStyles.buttonText}>Download CV</span>
-                    </>
-                  )}
-                </Button>
-                <Button href="#contact" className={contactButtonClass}>
-                  <HiOutlineEnvelope className={appStyles.buttonIcon} />
-                  <span className={appStyles.buttonText}>Get in Touch</span>
-                </Button>
+                    )
+                  }
+                  text={loading ? '' : 'Download CV'}
+                />
+                <Button
+                  href="#contact"
+                  className={contactButtonClass}
+                  icon={<HiOutlineEnvelope className={appStyles.buttonIcon} />}
+                  text="Get in Touch"
+                />
               </div>
             </SlideFromSide>
           </Col>
