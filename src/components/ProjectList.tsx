@@ -54,15 +54,41 @@ const ProjectList: React.FC<ProjectListProps> = ({ project, index }) => {
               </span>
             ))}
           </div>
-          <div className={`mt-auto ${styles.githubStats}`}>
-            <img
-              src={`https://img.shields.io/github/commit-activity/t/${repoPath}?style=flat-square&logo=git&logoColor=dc1a1a&labelColor=383838`}
-              alt="Commit Activity"
-            />
-            <img
-              src={`https://img.shields.io/github/last-commit/${repoPath}?style=flat-square&logo=github&logoColor=ffffff&labelColor=383838&label=Updated`}
-              alt="Last Commit"
-            />
+          <div className={`mb-3 ${styles.githubStats}`}>
+            <a
+              href={`https://github.com/${repoPath}/graphs/commit-activity`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={`https://img.shields.io/github/commit-activity/t/${repoPath}?style=flat-square&logo=git&logoColor=dc1a1a&labelColor=ececec&color=ececec`}
+                alt="Commit Activity"
+              />
+            </a>
+            <a
+              href={`https://github.com/${repoPath}/commits`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={`https://img.shields.io/github/last-commit/${repoPath}?style=flat-square&logo=github&logoColor=1d1d1d&labelColor=ececec&label=Updated&color=ececec`}
+                alt="Last Commit"
+                className="my-1"
+              />
+            </a>
+            {project.projectBoard && (
+              <a
+                href={`https://github.com/${repoPath}/issues`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={`https://img.shields.io/github/issues/${repoPath}?style=flat-square&logo=github&logoColor=1d1d1d&labelColor=ececec&label=Issues&color=ececec`}
+                  alt="Issues"
+                  className="my-1"
+                />
+              </a>
+            )}
           </div>
           {project.isHackathon && (
             <img
@@ -85,7 +111,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ project, index }) => {
               className={styles.gitpodLogo}
             />
           )}
-          <div className="mt-3 d-flex justify-content-between">
+          <div className="mt-auto d-flex justify-content-between">
             <Button
               href={project.github}
               target="_blank"
