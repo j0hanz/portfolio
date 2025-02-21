@@ -21,9 +21,8 @@ const Hero: React.FC = () => {
   const handleImageModalOpen = useCallback(() => setShowImageModal(true), []);
   const handleImageModalClose = useCallback(() => setShowImageModal(false), []);
 
-  const buttonBaseClass = `${styles.heroButton}`;
-  const downloadButtonClass = `${buttonBaseClass} my-4 ${styles.downloadButton}`;
-  const contactButtonClass = `${buttonBaseClass} ${styles.contactButton}`;
+  const downloadButtonClass = `my-4 ${styles.downloadButton}`;
+  const contactButtonClass = `${styles.contactButton}`;
 
   return (
     <section id="hero" className={`text-center ${appStyles.sectionPadding}`}>
