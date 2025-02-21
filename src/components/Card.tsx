@@ -16,7 +16,7 @@ const Card: FC<CardProps> = ({ title, subtitle, children, className }) => (
   >
     <BootstrapCard.Body className={appStyles.cardBody}>
       <BootstrapCard.Title className={`${appStyles.cardHeader} pb-1`}>
-        <span>{title}</span>
+        <div>{title}</div>
       </BootstrapCard.Title>
       {subtitle && (
         <BootstrapCard.Subtitle className="pb-3">
