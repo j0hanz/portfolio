@@ -1,4 +1,4 @@
-import React, { useState, useCallback, ChangeEvent, FormEvent } from 'react';
+import React from 'react';
 import { Container, Row, Col, Form, Spinner, Card } from 'react-bootstrap';
 import {
   HiOutlineTrash,
@@ -8,75 +8,22 @@ import {
 import EmailHandler from '@/api/emailJs';
 import styles from './styles/ContactForm.module.css';
 import appStyles from '@/App.module.css';
-import { validateForm } from '@/utils/validation';
-import { toast } from 'react-toastify';
 import FormContact from '@/form/contact';
 import Badge from '@/components/Badges';
 import Button from '@/components/Button';
-
-interface FormData {
-  name: string;
-  email: string;
-  company: string;
-  url: string;
-  message: string;
-}
-
-interface FormErrors {
-  name?: string;
-  email?: string;
-  url?: string;
-  message?: string;
-}
+import useContactForm from '@/hooks/useContactForm';
 
 const ContactForm: React.FC = () => {
-  const [validated, setValidated] = useState(false);
-  const [isSending, setIsSending] = useState(false);
-  const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    company: '',
-    url: '',
-    message: '',
-  });
-  const [errors, setErrors] = useState<FormErrors>({});
-
-  const handleChange = useCallback(
-    (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      setFormData({ ...formData, [event.target.name]: event.target.value });
-    },
-    [formData],
-  );
-
-  const handleEmailSent = useCallback((success: boolean) => {
-    setIsSending(false);
-    if (success) {
-      setFormData({ name: '', email: '', company: '', url: '', message: '' });
-      toast.success('Your message was sent successfully!');
-    } else {
-      toast.error('Failed to send message! Please try again later.');
-    }
-  }, []);
-
-  const handleSubmit = useCallback(
-    (event: FormEvent<HTMLFormElement>) => {
-      event.preventDefault();
-      const newErrors = validateForm(formData);
-      setErrors(newErrors);
-      const formValid = Object.keys(newErrors).length === 0;
-      setValidated(formValid);
-      if (formValid) {
-        setIsSending(true);
-      }
-    },
-    [formData],
-  );
-
-  const handleReset = useCallback(() => {
-    setFormData({ name: '', email: '', company: '', url: '', message: '' });
-    setErrors({});
-    setValidated(false);
-  }, []);
+  const {
+    validated,
+    isSending,
+    formData,
+    errors,
+    handleChange,
+    handleEmailSent,
+    handleSubmit,
+    handleReset,
+  } = useContactForm();
 
   return (
     <section id="contact" className={appStyles.sectionPadding}>
