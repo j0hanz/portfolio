@@ -49,9 +49,9 @@ const ProjectList: React.FC<ProjectListProps> = ({ project, index }) => {
           </Card.Text>
           <div className={styles.technologies}>
             {project.technologies.map((tech, i) => (
-              <span key={i} className={appStyles.customBadge}>
+              <div key={i} className={appStyles.customBadge}>
                 {tech}
-              </span>
+              </div>
             ))}
           </div>
           <div className={`mb-3 ${styles.githubStats}`}>
@@ -144,14 +144,14 @@ const ProjectList: React.FC<ProjectListProps> = ({ project, index }) => {
                   </Tooltip>
                 }
               >
-                <span className="d-inline-block">
+                <div className="d-inline-block">
                   <Button
                     disabled
                     className={`${styles.customButton} ${styles.demoButton}`}
                     icon={<HiMiniPlay className={styles.buttonIcon} />}
                     text="Demo"
                   />
-                </span>
+                </div>
               </OverlayTrigger>
             )}
           </div>
