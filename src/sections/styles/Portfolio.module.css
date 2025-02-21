@@ -102,9 +102,10 @@
 .githubStats img {
   display: flex;
   flex-direction: column;
-  margin-bottom: 0.4rem;
-  border: none;
-  border-radius: 6.5px;
+  align-items: start;
+  transform: skew(-10deg);
+  border-bottom: 1px solid var(--img-shield-border-color);
+  border-radius: 0 !important;
 }
 
 @media (max-width: 425px) {
