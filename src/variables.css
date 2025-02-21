@@ -6,7 +6,7 @@
   --badge-color: #2d2d2d;
   --bg-dark: #181818e5;
   --bg-transparent: transparent;
-  --body-bg: #d3d2d2;
+  --body-bg: #dbdada;
   --bs-body-bg: none !important;
   --bs-border-color: none !important;
   --bs-border-width: 0 !important;
@@ -27,16 +27,16 @@
   --form-border-color: #dadada;
   --github-color: #ffffff;
   --linkedin-color: #0a66c2;
-  --main-icon-color: #2d2d2d;
+  --main-icon-color: #242424;
   --modal-bg: #181818d8;
   --nav-icon-color: #0284d4;
-  --nav-link-color: #e6e6e6;
+  --nav-link-color: #f3f3f3;
   --nav-link-hover-color: #40a9ff;
   --pdf-color: #dc1a1a;
   --scrollbar-thumb: #cccccc;
   --scrollbar-thumb-hover: #8a8a8a;
   --scrollbar-track: #171717;
-  --section-title-color: #2d2d2d;
+  --section-title-color: #242424;
   --source-code-color: #3fb950;
   --spinner-color: linear-gradient(
     90deg,
@@ -44,9 +44,9 @@
     #0169b2 50%,
     #0284d4 100%
   );
-  --text-color: #2d2d2d;
+  --text-color: #1d1d1d;
   --text-hero: linear-gradient(180deg, #015180 25%, #015180 50%, #4b89cc 75%);
-  --text-light: #f2f2f2;
+  --text-light: #f5f4f4;
   --btn-bg-dark: linear-gradient(180deg, #383838 0%, #282828 50%, #181818 100%);
   --btn-bg-primary: linear-gradient(
     180deg,
