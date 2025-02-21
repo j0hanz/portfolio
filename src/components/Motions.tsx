@@ -3,14 +3,9 @@ import { motion, MotionProps } from 'framer-motion';
 
 const transition = {
   duration: 0.8,
-  delay: 0.1,
+  delay: 0.2,
   ease: 'easeInOut',
 };
-
-interface MotionWrapperProps extends MotionProps {
-  children: ReactNode;
-  sectionId: keyof typeof motionVariants;
-}
 
 const defaultVariant = {
   initial: { opacity: 0, y: 95 },
@@ -25,7 +20,24 @@ const motionVariants = {
   portfolio: defaultVariant,
   workExperience: defaultVariant,
   contact: defaultVariant,
+  slideFromLeft: {
+    initial: { opacity: 0, x: -95 },
+    whileInView: { opacity: 1, x: 0 },
+  },
+  slideFromRight: {
+    initial: { opacity: 0, x: 95 },
+    whileInView: { opacity: 1, x: 0 },
+  },
+  slideFromLeftAndRight: {
+    initial: { opacity: 0, x: -95 },
+    whileInView: { opacity: 1, x: 95 },
+  },
 };
+
+interface MotionWrapperProps extends MotionProps {
+  children: ReactNode;
+  sectionId: keyof typeof motionVariants;
+}
 
 const MotionWrapper: FC<MotionWrapperProps> = ({
   children,
@@ -42,4 +54,27 @@ const MotionWrapper: FC<MotionWrapperProps> = ({
   </motion.div>
 );
 
-export { MotionWrapper, motionVariants };
+interface SlideFromSideProps extends MotionProps {
+  children: ReactNode;
+  from: 'left' | 'right';
+}
+
+const SlideFromSide: FC<SlideFromSideProps> = ({
+  children,
+  from,
+  ...props
+}) => {
+  const initialX = from === 'left' ? -100 : 100;
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: initialX }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={transition}
+      {...props}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+export { MotionWrapper, SlideFromSide, motionVariants };
