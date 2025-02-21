@@ -1,0 +1,12 @@
+.buttonIcon {
+  margin-right: 10px;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  font-size: 1.15rem;
+}
+
+.buttonText {
+  font-size: 0.9rem;
+  letter-spacing: 0.25px;
+  color: var(--text-light);
+}
