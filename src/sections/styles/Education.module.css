@@ -13,7 +13,15 @@
 }
 
 .credentialButton {
-  background-image: var(--btn-bg-dark);
+  background: var(--btn-bg-dark);
+}
+
+.credentialButton:hover {
+  background: var(--btn-bg-dark);
+}
+
+.credentialButton:active {
+  background: var(--btn-bg-dark) !important;
 }
 
 .customButton:hover {

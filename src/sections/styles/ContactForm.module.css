@@ -65,7 +65,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-image: var(--btn-bg-primary);
+  background: var(--btn-bg-primary);
 }
 
 .buttonIcon {
@@ -85,10 +85,12 @@
 
 .submitButton:hover {
   filter: brightness(0.7);
+  background: var(--btn-bg-primary);
 }
 
 .submitButton:active {
   transform: skew(-10deg) scale(0.96);
+  background: var(--btn-bg-primary) !important;
 }
 
 .clearButton {
@@ -101,13 +103,15 @@
   transform: skew(-10deg);
   display: flex;
   align-items: center;
-  background-image: var(--btn-bg-dark);
+  background: var(--btn-bg-dark);
 }
 
 .clearButton:hover {
   filter: brightness(0.7);
+  background: var(--btn-bg-dark);
 }
 
 .clearButton:active {
   transform: skew(-10deg) scale(0.96);
+  background: var(--btn-bg-dark) !important;
 }

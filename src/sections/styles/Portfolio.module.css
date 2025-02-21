@@ -40,11 +40,19 @@
   background: var(--btn-bg-dark);
 }
 
+.githubButton:hover {
+  background: var(--btn-bg-dark);
+}
+
+.githubButton:active {
+  background: var(--btn-bg-dark) !important;
+}
+
 .newBadge {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: var(--btn-bg-primary);
+  background: var(--btn-bg-primary);
   margin-left: 0.6rem;
   height: 1.3rem;
   width: 2.7rem;
@@ -56,7 +64,15 @@
 }
 
 .demoButton {
-  background-image: var(--btn-bg-primary);
+  background: var(--btn-bg-primary);
+}
+
+.demoButton:hover {
+  background: var(--btn-bg-primary);
+}
+
+.demoButton:active {
+  background: var(--btn-bg-primary) !important;
 }
 
 .customButton:hover {

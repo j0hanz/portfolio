@@ -33,8 +33,24 @@
   background: var(--btn-bg-primary);
 }
 
+.downloadButton:hover {
+  background: var(--btn-bg-primary);
+}
+
+.downloadButton:active {
+  background: var(--btn-bg-primary) !important;
+}
+
 .contactButton {
-  background-image: var(--btn-bg-dark);
+  background: var(--btn-bg-dark);
+}
+
+.contactButton:hover {
+  background: var(--btn-bg-dark);
+}
+
+.contactButton:active {
+  background: var(--btn-bg-dark) !important;
 }
 
 .buttonIcon {
