@@ -22,14 +22,7 @@ export const fetchCommitHistory = async (repo: string): Promise<Commit[]> => {
     });
 
     if (!response.ok) {
-      switch (response.status) {
-        case 404:
-          throw new Error('Repository not found');
-        case 401:
-          throw new Error('Unauthorized access - check your token');
-        default:
-          throw new Error(`Error: ${response.statusText}`);
-      }
+      throw new Error(`Error: ${response.status} ${response.statusText}`);
     }
 
     const data: Commit[] = await response.json();
