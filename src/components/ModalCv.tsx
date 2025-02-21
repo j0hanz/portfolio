@@ -1,4 +1,4 @@
-import { FC, useCallback } from 'react';
+import { FC, useCallback, memo } from 'react';
 import { Modal } from 'react-bootstrap';
 import { HiOutlineGlobeAlt } from 'react-icons/hi2';
 import Cv_se from '@/assets/Linus_Johansson_CV_sv.pdf';
@@ -60,4 +60,4 @@ const ModalCv: FC<ModalCvProps> = ({ show, handleClose }) => {
   );
 };
 
-export default ModalCv;
+export default memo(ModalCv);

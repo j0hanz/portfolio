@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, memo } from 'react';
 import { MotionWrapper, motionVariants } from '@/components/Motions';
 
 interface SectionWrapperProps {
@@ -10,4 +10,4 @@ const SectionWrapper: FC<SectionWrapperProps> = ({ sectionId, children }) => (
   <MotionWrapper sectionId={sectionId}>{children}</MotionWrapper>
 );
 
-export default SectionWrapper;
+export default memo(SectionWrapper);

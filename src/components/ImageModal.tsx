@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { Modal, Container } from 'react-bootstrap';
 import ProfileImage from '@/assets/image_me.webp';
 import styles from './styles/ImageModal.module.css';
@@ -37,4 +37,4 @@ const ImageModal: FC<ImageModalProps> = ({ show, handleClose }) => {
   );
 };
 
-export default ImageModal;
+export default memo(ImageModal);

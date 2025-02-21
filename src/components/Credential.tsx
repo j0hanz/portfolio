@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { Modal, Container } from 'react-bootstrap';
 import ImageCredential from '@/assets/Credential.webp';
 import { HiXMark, HiArrowTopRightOnSquare } from 'react-icons/hi2';
@@ -50,4 +50,4 @@ const Credential: FC<CredentialProps> = ({ show, handleClose }) => {
   );
 };
 
-export default Credential;
+export default memo(Credential);

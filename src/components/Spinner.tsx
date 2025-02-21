@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import styles from './styles/Spinner.module.css';
 
 const Spinner: FC = () => {
@@ -10,4 +10,4 @@ const Spinner: FC = () => {
   );
 };
 
-export default Spinner;
+export default memo(Spinner);
