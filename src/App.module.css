@@ -147,8 +147,9 @@
   display: inline-block;
   align-items: center;
   color: var(--badge-color);
-  margin-right: 1rem;
+  margin-right: 1.5rem;
   font-size: 0.8rem;
+  letter-spacing: 0.3px;
   transform: skew(-10deg);
 }
 
