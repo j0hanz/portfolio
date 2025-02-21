@@ -23,7 +23,9 @@ const Footer: FC = () => {
       >
         <Row className="d-flex justify-content-center align-items-center mx-auto">
           <Col sm={6} className="mb-sm-0">
-            <div className={styles.footerLinkHeader}>Contact Details</div>
+            <div className={`mb-2 ${styles.footerLinkHeader}`}>
+              Contact Details
+            </div>
             <HiOutlineEnvelope className={styles.footerIcon} />
             <a
               href="mailto:l.johansson93@outlook.com"
@@ -33,7 +35,7 @@ const Footer: FC = () => {
             </a>
           </Col>
           <Col sm={6} className="text-sm-end my-1">
-            <p className="d-flex align-items-center justify-content-sm-end">
+            <div className="d-flex align-items-center justify-content-sm-end mb-3">
               <FontAwesomeIcon
                 icon={faCreativeCommons}
                 className={styles.footerIcon}
@@ -41,7 +43,7 @@ const Footer: FC = () => {
               <small className={appStyles.copyrightText}>
                 2024 Linus Johansson
               </small>
-            </p>
+            </div>
             <div className="mt-4 mt-sm-0 mx-auto">
               <Row className="d-flex justify-content-sm-end flex-row justify-content-between">
                 {socialLinks.map(
