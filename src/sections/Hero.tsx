@@ -43,7 +43,7 @@ const Hero: React.FC = () => {
             <SlideFromSide from="right">
               <div className={styles.gradientText}>Linus Johansson</div>
               <div
-                className={`text-body-secondary fw-semibold my-2 ${styles.developerTitle}`}
+                className={`fw-semibold my-2 ${styles.developerTitle}`}
               >
                 Junior Full-Stack Developer
               </div>
