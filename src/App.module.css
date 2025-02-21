@@ -27,11 +27,6 @@
   padding-right: 0.5rem;
 }
 
-.certificateIcon {
-  color: var(--certificate-color);
-  font-size: 1.15rem;
-}
-
 .sourceCodeIcon {
   color: var(--source-code-color);
 }
@@ -217,15 +212,17 @@
 }
 
 .btnCredential {
-  max-width: 100%;
-  height: 30px;
+  width: 140px;
+  height: 32px;
   border: none;
   border-radius: 6.5px;
   transition: all 0.2s ease;
   text-transform: uppercase;
+  transform: skew(-10deg);
+  max-width: 100%;
   display: flex;
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: center;
   background-image: var(--btn-bg-dark);
 }
 
@@ -234,7 +231,7 @@
 }
 
 .btnCredential:active {
-  transform: scale(0.96);
+  transform: skew(-10deg) scale(0.96);
 }
 
 /* Responsive Adjustments */
