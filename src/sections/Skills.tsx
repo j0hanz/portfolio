@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { HiMiniCog8Tooth } from 'react-icons/hi2';
+import { HiMiniCog8Tooth, HiOutlineBookOpen } from 'react-icons/hi2';
 import Card from '@/components/Card';
 import styles from './styles/Skills.module.css';
 import appStyles from '@/App.module.css';
@@ -18,7 +18,10 @@ const Skills: React.FC = () => {
       <Card title={skill.label} className={styles.skillCard}>
         <skill.icon className={styles.skillIcon} />
         {skill.learning && (
-          <span className={styles.learningBadge}>Learning</span>
+          <span className={styles.learningBadge}>
+            <HiOutlineBookOpen className={styles.learningIcon} />
+            Learning
+          </span>
         )}
       </Card>
     </Col>
