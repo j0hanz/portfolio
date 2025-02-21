@@ -146,6 +146,7 @@
   color: var(--badge-color);
   margin-right: 1rem;
   font-size: 0.8rem;
+  transform: skew(-10deg);
 }
 
 .badgeText {
