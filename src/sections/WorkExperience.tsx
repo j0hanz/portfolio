@@ -25,15 +25,15 @@ const WorkExperience: React.FC = () => {
         subtitle={
           <>
             <div className={appStyles.customBadge}>
-              <HiOutlineBuildingOffice className="me-2" />
+              <HiOutlineBuildingOffice className="me-1" />
               <span className={appStyles.badgeText}>
                 {experience.workplace}
               </span>
             </div>
-            <span className={appStyles.customBadge}>
-              <HiOutlineCalendar className="me-2" />
+            <div className={appStyles.customBadge}>
+              <HiOutlineCalendar className="me-1" />
               <span className={appStyles.badgeText}>{experience.duration}</span>
-            </span>
+            </div>
           </>
         }
       >
