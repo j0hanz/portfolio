@@ -6,6 +6,7 @@ import Card from '@/components/Card';
 import appStyles from '@/App.module.css';
 import aboutMeItems from '@/data/aboutMeItems';
 import aboutMeText from '@/data/aboutMeText';
+import styles from './styles/AboutMe.module.css';
 
 interface AboutMeItem {
   title: string;
@@ -15,7 +16,7 @@ interface AboutMeItem {
 
 const AboutMeText: React.FC = () => (
   <Card title="Overview">
-    <p className={appStyles.cardText}>{aboutMeText}</p>
+    <div className={appStyles.cardText}>{aboutMeText}</div>
   </Card>
 );
 
@@ -30,8 +31,12 @@ const AboutMeList: React.FC<{
           <strong>{item.title}:</strong> {item.description}
           {item.hasCredential && (
             <div className="mt-2">
-              <Button onClick={onShowModal} className={appStyles.btnCredential}>
-                <HiMiniCheckBadge className={appStyles.certificateIcon} />
+              <Button
+                onClick={onShowModal}
+                className={`${appStyles.btnCredential} mt-2`}
+              >
+                <HiMiniCheckBadge className={styles.buttonIcon} />
+                <span className={styles.buttonText}>Credential</span>
               </Button>
             </div>
           )}
