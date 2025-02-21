@@ -19,7 +19,7 @@ const Card: FC<CardProps> = ({ title, subtitle, children, className }) => (
         <span>{title}</span>
       </BootstrapCard.Title>
       {subtitle && (
-        <BootstrapCard.Subtitle className="pb-2">
+        <BootstrapCard.Subtitle className="pb-3">
           {subtitle}
         </BootstrapCard.Subtitle>
       )}
