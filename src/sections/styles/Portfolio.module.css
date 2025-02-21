@@ -38,6 +38,7 @@
   align-items: center;
   justify-content: center;
   transform: skew(-10deg);
+  font-size: 0.95rem;
 }
 
 .githubButton {
@@ -95,7 +96,7 @@
 
 .buttonText {
   font-size: 0.9rem;
-  letter-spacing: 0.25px;
+  letter-spacing: 0.3px;
   color: var(--text-light);
 }
 
