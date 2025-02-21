@@ -37,7 +37,7 @@
 }
 
 .githubButton {
-  background-image: var(--btn-bg-dark);
+  background: var(--btn-bg-dark);
 }
 
 .demoButton {
