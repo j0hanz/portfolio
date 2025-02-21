@@ -18,10 +18,10 @@ const Skills: React.FC = () => {
       <Card title={skill.label} className={styles.skillCard}>
         <skill.icon className={styles.skillIcon} />
         {skill.learning && (
-          <span className={styles.learningBadge}>
+          <div className={styles.learningBadge}>
             <HiOutlineBookOpen className={styles.learningIcon} />
-            Learning
-          </span>
+            <span className={styles.skillsLearning}>Learning</span>
+          </div>
         )}
       </Card>
     </Col>
