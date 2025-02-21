@@ -43,6 +43,7 @@
 
 .contactButton {
   background: var(--btn-bg-dark);
+  font-size: 1.05rem;
 }
 
 .contactButton:hover {
@@ -54,7 +55,7 @@
 }
 
 .buttonIcon {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
 }
 
 @media (max-width: 990px) {

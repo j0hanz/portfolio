@@ -5,6 +5,7 @@
   border-radius: 6.5px;
   transition: all 0.2s ease;
   text-transform: uppercase;
+  letter-spacing: 0.3px;
   transform: skew(-10deg);
   max-width: 100%;
   display: flex;
