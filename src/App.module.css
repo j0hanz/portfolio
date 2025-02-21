@@ -37,6 +37,9 @@
 }
 
 .copyrightText {
+  transform: skew(-10deg);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
   font-size: 0.8rem;
   color: var(--text-light);
   opacity: 0.8;

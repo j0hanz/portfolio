@@ -41,9 +41,7 @@ const Footer: FC = () => {
                 icon={faCreativeCommons}
                 className={styles.footerIcon}
               />
-              <small className={appStyles.copyrightText}>
-                2024 Linus Johansson
-              </small>
+              <small className={appStyles.copyrightText}>Copyright 2025</small>
             </div>
             <div className="mt-4 mt-sm-0 mx-auto">
               <Row className="d-flex justify-content-sm-end flex-row justify-content-between">
