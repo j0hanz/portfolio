@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Card, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Col, Card, OverlayTrigger, Tooltip, Badge } from 'react-bootstrap';
 import {
   HiMiniUser,
   HiMiniUserGroup,
@@ -36,6 +36,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ project, index }) => {
             >
               {project.api && <HiMiniServer className="me-2" />}
               {project.title}
+              {project.isNew && <Badge className={styles.newBadge}>New</Badge>}
             </div>
             {project.collaborative ? <HiMiniUserGroup /> : <HiMiniUser />}
           </Card.Title>

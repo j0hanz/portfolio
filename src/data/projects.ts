@@ -9,6 +9,7 @@ export interface Project {
   isHackathon_3: boolean;
   api: boolean;
   gitpod_template?: boolean;
+  isNew?: boolean;
 }
 
 const projects: Project[] = [
@@ -30,6 +31,7 @@ const projects: Project[] = [
     isHackathon: false,
     isHackathon_3: false,
     api: false,
+    isNew: true,
   },
   {
     title: 'Magic December',
@@ -42,6 +44,8 @@ const projects: Project[] = [
     isHackathon: true,
     isHackathon_3: false,
     api: false,
+    isNew: false,
+    gitpod_template: false,
   },
   {
     title: 'Script to Sound',
@@ -62,6 +66,8 @@ const projects: Project[] = [
     isHackathon: false,
     isHackathon_3: true,
     api: false,
+    isNew: false,
+    gitpod_template: false,
   },
   {
     title: 'Portfolio',
@@ -82,6 +88,8 @@ const projects: Project[] = [
     isHackathon: false,
     isHackathon_3: false,
     api: false,
+    isNew: false,
+    gitpod_template: false,
   },
   {
     title: 'SonataCraft',
@@ -105,6 +113,8 @@ const projects: Project[] = [
     isHackathon: true,
     isHackathon_3: false,
     api: false,
+    isNew: false,
+    gitpod_template: false,
   },
   {
     title: 'j0hanz-gitpod-template',
@@ -118,6 +128,7 @@ const projects: Project[] = [
     isHackathon_3: false,
     api: false,
     gitpod_template: true,
+    isNew: false,
   },
   {
     title: 'Blog Beat',
@@ -139,6 +150,8 @@ const projects: Project[] = [
     isHackathon: false,
     isHackathon_3: false,
     api: false,
+    isNew: false,
+    gitpod_template: false,
   },
   {
     title: 'Blog Beat API',
@@ -159,6 +172,8 @@ const projects: Project[] = [
     isHackathon: false,
     isHackathon_3: false,
     api: true,
+    isNew: false,
+    gitpod_template: false,
   },
   {
     title: 'Tech Corner',
@@ -181,6 +196,8 @@ const projects: Project[] = [
     isHackathon: false,
     isHackathon_3: false,
     api: false,
+    isNew: false,
+    gitpod_template: false,
   },
   {
     title: 'Pick my Spell',
@@ -193,6 +210,8 @@ const projects: Project[] = [
     isHackathon_3: false,
     collaborative: false,
     api: false,
+    isNew: false,
+    gitpod_template: false,
   },
   {
     title: 'Fix my Spell',
@@ -205,6 +224,8 @@ const projects: Project[] = [
     isHackathon: false,
     isHackathon_3: false,
     api: false,
+    isNew: false,
+    gitpod_template: false,
   },
 ];
 

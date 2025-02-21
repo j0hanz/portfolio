@@ -40,6 +40,21 @@
   background: var(--btn-bg-dark);
 }
 
+.newBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: var(--btn-bg-primary);
+  margin-left: 0.6rem;
+  height: 1.3rem;
+  width: 2.7rem;
+  border: none;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  border-radius: 6.5px;
+  transform: skew(-10deg);
+}
+
 .demoButton {
   background-image: var(--btn-bg-primary);
 }
