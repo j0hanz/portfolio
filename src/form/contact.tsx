@@ -9,7 +9,7 @@ import {
 } from 'react-icons/hi2';
 import styles from '@/sections/styles/ContactForm.module.css';
 
-import { ChangeEvent } from 'react';
+import { ChangeEvent, memo } from 'react';
 
 interface FormFieldsProps {
   formData: {
@@ -30,7 +30,11 @@ interface FormFieldsProps {
   ) => void;
 }
 
-const FormFields = ({ formData, errors, handleChange }: FormFieldsProps) => {
+const FormFields: React.FC<FormFieldsProps> = ({
+  formData,
+  errors,
+  handleChange,
+}) => {
   return (
     <>
       {/* Name field */}
@@ -149,4 +153,4 @@ const FormFields = ({ formData, errors, handleChange }: FormFieldsProps) => {
   );
 };
 
-export default FormFields;
+export default memo(FormFields);
