@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { Container, Row, Col, Spinner } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import Image from '@/assets/image_me.webp';
 import styles from './styles/Hero.module.css';
 import { HiOutlineEnvelope, HiOutlineArrowDownTray } from 'react-icons/hi2';
@@ -10,16 +10,11 @@ import { SlideFromSide } from '@/components/Motions';
 import Button from '@/components/Button';
 
 const Hero: React.FC = () => {
-  const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [showImageModal, setShowImageModal] = useState(false);
 
   const handleModalOpen = useCallback(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      setShowModal(true);
-    }, 1000);
+    setShowModal(true);
   }, []);
 
   const handleModalClose = useCallback(() => setShowModal(false), []);
@@ -55,25 +50,13 @@ const Hero: React.FC = () => {
               <div className="d-flex flex-column align-items-center align-items-lg-start mt-3">
                 <Button
                   onClick={handleModalOpen}
-                  disabled={loading}
                   className={downloadButtonClass}
                   icon={
-                    loading ? (
-                      <Spinner
-                        variant="light"
-                        as="span"
-                        animation="border"
-                        size="sm"
-                        role="status"
-                        aria-hidden="true"
-                      />
-                    ) : (
-                      <HiOutlineArrowDownTray
-                        className={`${appStyles.buttonIcon} ${styles.buttonIcon}`}
-                      />
-                    )
+                    <HiOutlineArrowDownTray
+                      className={`${appStyles.buttonIcon} ${styles.buttonIcon}`}
+                    />
                   }
-                  text={loading ? '' : 'Download CV'}
+                  text="Download CV"
                 />
                 <Button
                   href="#contact"
