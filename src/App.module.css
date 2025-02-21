@@ -74,7 +74,7 @@
 
 .cardText {
   line-height: 1.8;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.3px;
 }
 
 .customTooltip {
@@ -138,7 +138,7 @@
 }
 
 .cardHeader {
-  letter-spacing: 0.25px;
+  letter-spacing: 0.3px;
   font-size: 1.25rem;
 }
 

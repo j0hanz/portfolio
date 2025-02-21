@@ -56,7 +56,7 @@
 .submitButton {
   width: 100px;
   max-width: 100%;
-  height: 32px;
+  height: 30px;
   font-size: 0.95rem;
   border: none;
   border-radius: 6.5px;
@@ -97,7 +97,7 @@
 .clearButton {
   width: 40px;
   max-width: 100%;
-  height: 32px;
+  height: 30px;
   border: none;
   border-radius: 6.5px;
   transition: all 0.2s ease;
