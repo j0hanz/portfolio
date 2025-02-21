@@ -38,7 +38,11 @@ const ProjectList: React.FC<ProjectListProps> = ({ project, index }) => {
               {project.title}
               {project.isNew && <Badge className={styles.newBadge}>New</Badge>}
             </div>
-            {project.collaborative ? <HiMiniUserGroup /> : <HiMiniUser />}
+            {project.collaborative ? (
+              <HiMiniUserGroup className={styles.userIcon} />
+            ) : (
+              <HiMiniUser className={styles.userIcon} />
+            )}
           </Card.Title>
           <Card.Text className={appStyles.cardText}>
             {project.description}
