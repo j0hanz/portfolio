@@ -61,7 +61,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ project, index }) => {
               rel="noopener noreferrer"
             >
               <img
-                src={`https://img.shields.io/github/commit-activity/t/${repoPath}?style=flat-square&logo=git&logoColor=dc1a1a&labelColor=ececec&color=ececec`}
+                src={`https://img.shields.io/github/commit-activity/t/${repoPath}?style=flat-square&logo=git&logoColor=dc1a1a&labelColor=ececec&label=Commits:&color=ececec`}
                 alt="Commit Activity"
               />
             </a>
@@ -71,7 +71,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ project, index }) => {
               rel="noopener noreferrer"
             >
               <img
-                src={`https://img.shields.io/github/last-commit/${repoPath}?style=flat-square&logo=github&logoColor=1d1d1d&labelColor=ececec&label=Updated&color=ececec`}
+                src={`https://img.shields.io/github/last-commit/${repoPath}?style=flat-square&logo=github&logoColor=1d1d1d&labelColor=ececec&label=Updated:&color=ececec`}
                 alt="Last Commit"
                 className="my-1"
               />
@@ -83,7 +83,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ project, index }) => {
                 rel="noopener noreferrer"
               >
                 <img
-                  src={`https://img.shields.io/github/issues/${repoPath}?style=flat-square&logo=github&logoColor=1d1d1d&labelColor=ececec&label=Issues&color=ececec`}
+                  src={`https://img.shields.io/github/issues/${repoPath}?style=flat-square&logo=github&logoColor=1d1d1d&labelColor=ececec&label=Issues:&color=ececec`}
                   alt="Issues"
                   className="my-1"
                 />
