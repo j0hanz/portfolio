@@ -15,11 +15,11 @@ const Card: FC<CardProps> = ({ title, subtitle, children, className }) => (
     className={`h-100 ${styles.card} ${appStyles.cardBgColor} ${className}`}
   >
     <BootstrapCard.Body className={appStyles.cardBody}>
-      <BootstrapCard.Title className={`${appStyles.cardHeader} mb-2`}>
+      <BootstrapCard.Title className={`${appStyles.cardHeader} pb-1`}>
         <span>{title}</span>
       </BootstrapCard.Title>
       {subtitle && (
-        <BootstrapCard.Subtitle className="mb-3">
+        <BootstrapCard.Subtitle className="pb-2">
           {subtitle}
         </BootstrapCard.Subtitle>
       )}
