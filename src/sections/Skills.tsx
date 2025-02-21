@@ -9,13 +9,17 @@ import skills from '@/data/skills';
 interface Skill {
   icon: React.ElementType;
   label: string;
+  learning?: boolean;
 }
 
 const Skills: React.FC = () => {
   const renderSkill = (skill: Skill, index: number) => (
     <Col md={3} sm={6} xs={6} key={index} className="text-center mb-4">
       <Card title={skill.label} className={styles.skillCard}>
-        <skill.icon className={`my-1 ${styles.skillIcon}`} />
+        <skill.icon className={styles.skillIcon} />
+        {skill.learning && (
+          <span className={styles.learningBadge}>Learning</span>
+        )}
       </Card>
     </Col>
   );
