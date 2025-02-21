@@ -12,6 +12,11 @@
   z-index: -1;
 }
 
+.certificateIcon {
+  color: var(--certificate-color);
+  padding-right: 0.5rem;
+}
+
 .linkedinIcon {
   color: var(--linkedin-color);
   padding-right: 0.5rem;
