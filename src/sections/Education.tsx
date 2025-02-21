@@ -33,13 +33,13 @@ const Education: React.FC = () => {
         subtitle={
           <>
             <div className={appStyles.customBadge}>
-              <HiOutlineBuildingLibrary className="me-2" />
+              <HiOutlineBuildingLibrary className="me-1" />
               <span className={appStyles.badgeText}>{edu.school}</span>
             </div>
-            <span className={appStyles.customBadge}>
-              <HiOutlineCalendar className="me-2" />
+            <div className={appStyles.customBadge}>
+              <HiOutlineCalendar className="me-1" />
               <span className={appStyles.badgeText}>{edu.duration}</span>
-            </span>
+            </div>
           </>
         }
       >
