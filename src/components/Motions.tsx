@@ -1,17 +1,20 @@
 import { FC, ReactNode } from 'react';
 import { motion, MotionProps } from 'framer-motion';
 
+// Transition settings for animations
 const transition = {
   duration: 0.8,
   delay: 0.2,
   ease: 'easeInOut',
 };
 
+// Default animation variant
 const defaultVariant = {
   initial: { opacity: 0, y: 95 },
   whileInView: { opacity: 1, y: 0 },
 };
 
+// Different animation variants for sections
 const motionVariants = {
   hero: { initial: { opacity: 0 }, whileInView: { opacity: 1 } },
   aboutMe: defaultVariant,
@@ -39,6 +42,7 @@ interface MotionWrapperProps extends MotionProps {
   sectionId: keyof typeof motionVariants;
 }
 
+// Wrapper component for applying motion animations to sections
 const MotionWrapper: FC<MotionWrapperProps> = ({
   children,
   sectionId,
@@ -59,6 +63,7 @@ interface SlideFromSideProps extends MotionProps {
   from: 'left' | 'right';
 }
 
+// Component for sliding animations from left or right
 const SlideFromSide: FC<SlideFromSideProps> = ({
   children,
   from,

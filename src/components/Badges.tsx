@@ -8,6 +8,7 @@ interface BadgeItemProps {
   date: string;
 }
 
+// Component for individual badge items
 const BadgeItem: FC<BadgeItemProps> = memo(({ href, imgSrc, date }) => (
   <Col xs={'auto'} className={styles.badgeContainer}>
     <a href={href} target="_blank" rel="noopener noreferrer">
@@ -20,6 +21,7 @@ const BadgeItem: FC<BadgeItemProps> = memo(({ href, imgSrc, date }) => (
   </Col>
 ));
 
+// Component for displaying a list of badges
 const Badges: FC = () => (
   <Row className="d-flex justify-content-between text-center mt-5">
     <BadgeItem

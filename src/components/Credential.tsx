@@ -12,6 +12,7 @@ interface CredentialProps {
   handleClose: () => void;
 }
 
+// Component for displaying a credential
 const Credential: FC<CredentialProps> = ({ show, handleClose }) => {
   const loading = useLoading();
 

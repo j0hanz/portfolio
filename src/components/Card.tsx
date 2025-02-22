@@ -10,6 +10,7 @@ interface CardProps {
   className?: string;
 }
 
+// Card component with title, subtitle, and children
 const Card: FC<CardProps> = ({ title, subtitle, children, className }) => (
   <BootstrapCard
     className={`h-100 ${styles.card} ${appStyles.cardBgColor} ${className}`}

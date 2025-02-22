@@ -21,6 +21,7 @@ interface ProjectListProps {
   index: number;
 }
 
+// Component for displaying a list of projects
 const ProjectList: React.FC<ProjectListProps> = ({ project, index }) => {
   const repoPath = project.github.split('github.com/')[1];
 

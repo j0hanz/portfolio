@@ -12,6 +12,7 @@ interface ModalCvProps {
   handleClose: () => void;
 }
 
+// Component for selecting and downloading CVs
 const ModalCv: FC<ModalCvProps> = ({ show, handleClose }) => {
   const handleDownload = useCallback(
     (cv: string, fileName: string): void => {

@@ -12,6 +12,7 @@ interface ImageModalProps {
   handleClose: () => void;
 }
 
+// Component for displaying an image
 const ImageModal: FC<ImageModalProps> = ({ show, handleClose }) => {
   const loading: boolean = useLoading();
 

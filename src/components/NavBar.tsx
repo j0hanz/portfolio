@@ -22,8 +22,11 @@ const NavBar: React.FC = () => {
   const [showOffcanvas, setShowOffcanvas] = useState<boolean>(false);
   const offcanvasRef = useRef<HTMLDivElement>(null);
 
+  // Handlers for opening and closing the modal
   const handleModalOpen = useCallback((): void => setShowModal(true), []);
   const handleModalClose = useCallback((): void => setShowModal(false), []);
+
+  // Handlers for opening and closing the offcanvas
   const handleOffcanvasOpen = useCallback(
     (): void => setShowOffcanvas(true),
     [],
@@ -33,8 +36,10 @@ const NavBar: React.FC = () => {
     [],
   );
 
-  useClickOutside(offcanvasRef, handleOffcanvasClose);
+  // Use custom hook to detect clicks outside the offcanvas
+  useClickOutside(offcanvasRef, handleOffcanvasClose, `.${styles.navLink}`);
 
+  // Component for the navigation logo
   const NavLogo: React.FC = () => (
     <Nav.Link href="#hero" className="position-relative">
       <img
@@ -50,6 +55,7 @@ const NavBar: React.FC = () => {
     handleOffcanvasClose: () => void;
   }
 
+  // Component for the offcanvas menu
   const NavbarOffcanvas: React.FC<NavbarOffcanvasProps> = ({
     handleModalOpen,
     handleOffcanvasClose,
@@ -79,8 +85,9 @@ const NavBar: React.FC = () => {
     </Offcanvas>
   );
 
+  // Component for the navigation links
   const NavLinks: React.FC = () => (
-    <Nav className={styles.customOffcanvasNav}>
+    <Nav className={`${styles.customOffcanvasNav} ${appStyles.cardBgImage}`}>
       {navLinks.map(({ id, icon: Icon, label }) => (
         <Nav.Link key={id} href={`#${id}`} className={styles.navLink}>
           <Icon className={`${styles.navIcon} me-3`} />
@@ -94,6 +101,7 @@ const NavBar: React.FC = () => {
     handleModalOpen: () => void;
   }
 
+  // Component for the social links
   const SocialLinks: React.FC<SocialLinksProps> = ({ handleModalOpen }) => (
     <div className={styles.customOffcanvasSocialLinks}>
       <Nav className="d-flex flex-row justify-content-between">

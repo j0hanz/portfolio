@@ -8,6 +8,7 @@ interface CustomButtonProps extends ButtonProps {
   className?: string;
 }
 
+// Button component with optional icon and text
 const Button: FC<CustomButtonProps> = ({
   icon,
   text,
