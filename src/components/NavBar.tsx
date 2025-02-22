@@ -96,7 +96,7 @@ const NavBar: React.FC = () => {
 
   const SocialLinks: React.FC<SocialLinksProps> = ({ handleModalOpen }) => (
     <div className={styles.customOffcanvasSocialLinks}>
-      <Nav className="d-flex flex-row justify-content-between w-100">
+      <Nav className="d-flex flex-row justify-content-between">
         {socialLinks.map(({ id, icon, href, onClick, tooltip, iconClass }) => (
           <OverlayTrigger
             key={id}
@@ -111,7 +111,7 @@ const NavBar: React.FC = () => {
               href={href}
               onClick={id === 'download-pdf' ? handleModalOpen : onClick}
               target={href ? '_blank' : undefined}
-              className={`d-flex justify-content-center ${styles.socialLink}`}
+              className={styles.socialLink}
             >
               <FontAwesomeIcon
                 icon={icon}
