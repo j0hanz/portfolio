@@ -1,17 +1,24 @@
-import React, { FC, ReactNode, memo } from 'react';
+import { FC, ReactNode, memo } from 'react';
 import { Button as BootstrapButton, ButtonProps } from 'react-bootstrap';
 import styles from './styles/Button.module.css';
 
 interface CustomButtonProps extends ButtonProps {
   icon?: ReactNode;
-  text: string;
+  text?: string;
   className?: string;
 }
 
-const Button: FC<CustomButtonProps> = ({ icon, text, className, ...props }) => (
+const Button: FC<CustomButtonProps> = ({
+  icon,
+  text,
+  className,
+  children,
+  ...props
+}) => (
   <BootstrapButton {...props} className={`${styles.customButton} ${className}`}>
     {icon && <span className={styles.buttonIcon}>{icon}</span>}
-    <span className={styles.buttonText}>{text}</span>
+    {text && <span className={styles.buttonText}>{text}</span>}
+    {children}
   </BootstrapButton>
 );
 
