@@ -10,6 +10,7 @@
   align-items: center;
   justify-content: center;
   transform: skew(-10deg);
+  text-transform: uppercase;
 }
 
 .credentialButton {
