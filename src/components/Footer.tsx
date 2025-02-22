@@ -11,8 +11,8 @@ import { socialLinks } from '../data/socialLinks';
 const Footer: FC = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
 
+  // Handlers for opening and closing the modal
   const handleModalOpen = (): void => setShowModal(true);
-
   const handleModalClose = (): void => setShowModal(false);
 
   return (

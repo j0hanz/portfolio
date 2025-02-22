@@ -14,6 +14,7 @@ interface EmailHandlerProps {
   onEmailSent: (success: boolean) => void;
 }
 
+// Handling email sending via EmailJS
 const EmailHandler: FC<EmailHandlerProps> = ({ formData, onEmailSent }) => {
   const { name, email, company, url, message } = formData;
   const form = useRef<HTMLFormElement | null>(null);

@@ -17,7 +17,9 @@ interface Experience {
   description: string[];
 }
 
+// Rendering work experience section
 const WorkExperience: React.FC = () => {
+  // Render individual experience item
   const renderExperience = (experience: Experience, index: number) => (
     <Col lg={6} className="mb-4" key={index}>
       <Card

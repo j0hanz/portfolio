@@ -13,6 +13,7 @@ import Badge from '@/components/Badges';
 import Button from '@/components/Button';
 import useContactForm from '@/hooks/useContactForm';
 
+// Rendering contact form section
 const ContactForm: React.FC = () => {
   const {
     validated,

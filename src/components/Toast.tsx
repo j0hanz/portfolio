@@ -2,6 +2,7 @@ import { FC, memo } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+// Component for displaying toast notifications
 const Toast: FC = () => {
   return (
     <ToastContainer

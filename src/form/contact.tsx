@@ -8,7 +8,6 @@ import {
   HiOutlineChatBubbleOvalLeft,
 } from 'react-icons/hi2';
 import styles from '@/sections/styles/ContactForm.module.css';
-
 import { ChangeEvent, memo } from 'react';
 
 interface FormFieldsProps {
@@ -30,6 +29,7 @@ interface FormFieldsProps {
   ) => void;
 }
 
+// Rendering form fields
 const FormFields: React.FC<FormFieldsProps> = ({
   formData,
   errors,

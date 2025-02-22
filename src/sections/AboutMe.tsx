@@ -15,12 +15,14 @@ interface AboutMeItem {
   hasCredential: boolean;
 }
 
+// Displaying the overview text
 const AboutMeText: React.FC = () => (
   <Card title="Overview">
     <div className={appStyles.cardText}>{aboutMeText}</div>
   </Card>
 );
 
+// Displaying a list of highlights
 const AboutMeList: React.FC<{
   items: AboutMeItem[];
   onShowModal: () => void;
@@ -46,8 +48,11 @@ const AboutMeList: React.FC<{
   </Card>
 );
 
+// Main component for the About Me section
 const AboutMe: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
+
+  // Handlers for opening and closing the credential modal
   const handleShowModal = useCallback(() => setShowModal(true), []);
   const handleCloseModal = useCallback(() => setShowModal(false), []);
 

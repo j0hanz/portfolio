@@ -11,6 +11,7 @@ interface Commit {
   };
 }
 
+// Fetch commit history from GitHub API
 export const fetchCommitHistory = async (repo: string): Promise<Commit[]> => {
   try {
     const [owner, repoName]: string[] = repo.split('/').slice(-2);

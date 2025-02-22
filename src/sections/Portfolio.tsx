@@ -6,9 +6,11 @@ import projects from '@/data/projects';
 import { fetchCommit } from '@/utils/fetchCommit';
 import ProjectList from '@/components/ProjectList';
 
+// Rendering portfolio section
 const Portfolio: React.FC = () => {
   const [commitHistory, setCommitHistory] = useState<Record<string, any>>({});
 
+  // Fetch commit histories for projects
   const fetchHistories = useCallback(async () => {
     const combinedHistories = await fetchCommit(projects);
     setCommitHistory(combinedHistories);

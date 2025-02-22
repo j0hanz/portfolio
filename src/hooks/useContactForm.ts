@@ -17,6 +17,7 @@ interface FormErrors {
   message?: string;
 }
 
+// Custom hook for managing contact form state and logic
 const useContactForm = () => {
   const [validated, setValidated] = useState(false);
   const [isSending, setIsSending] = useState(false);
@@ -29,6 +30,7 @@ const useContactForm = () => {
   });
   const [errors, setErrors] = useState<FormErrors>({});
 
+  // Handle input changes
   const handleChange = useCallback(
     (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       setFormData({ ...formData, [event.target.name]: event.target.value });
@@ -36,6 +38,7 @@ const useContactForm = () => {
     [formData],
   );
 
+  // Handle email sent status
   const handleEmailSent = useCallback((success: boolean) => {
     setIsSending(false);
     if (success) {
@@ -46,6 +49,7 @@ const useContactForm = () => {
     }
   }, []);
 
+  // Handle form submission
   const handleSubmit = useCallback(
     (event: FormEvent<HTMLFormElement>) => {
       event.preventDefault();
@@ -60,6 +64,7 @@ const useContactForm = () => {
     [formData],
   );
 
+  // Handle form reset
   const handleReset = useCallback(() => {
     setFormData({ name: '', email: '', company: '', url: '', message: '' });
     setErrors({});

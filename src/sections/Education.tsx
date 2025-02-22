@@ -21,11 +21,13 @@ interface EducationItem {
   hasCredential: boolean;
 }
 
+// Rendering education section
 const Education: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
   const handleShowModal = useCallback(() => setShowModal(true), []);
   const handleCloseModal = useCallback(() => setShowModal(false), []);
 
+  // Render individual education item
   const renderEducationItem = (edu: EducationItem, index: number) => (
     <Col lg={6} className="mb-4" key={index}>
       <Card

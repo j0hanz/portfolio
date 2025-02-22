@@ -9,10 +9,12 @@ import appStyles from '@/App.module.css';
 import { SlideFromSide } from '@/components/Motions';
 import Button from '@/components/Button';
 
+// Rendering hero section
 const Hero: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
   const [showImageModal, setShowImageModal] = useState(false);
 
+  // Handlers for opening and closing modals
   const handleModalOpen = useCallback(() => {
     setShowModal(true);
   }, []);

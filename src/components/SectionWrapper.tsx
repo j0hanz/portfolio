@@ -6,6 +6,7 @@ interface SectionWrapperProps {
   children: ReactNode;
 }
 
+// Wrapper component for applying motion animations to sections
 const SectionWrapper: FC<SectionWrapperProps> = ({ sectionId, children }) => (
   <MotionWrapper sectionId={sectionId}>{children}</MotionWrapper>
 );

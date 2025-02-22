@@ -1,6 +1,7 @@
 import { fetchCommitHistory } from '@/api/github';
 import { Project } from '@/data/projects';
 
+// Fetch commit histories for multiple projects
 export const fetchCommit = async (projects: Project[]) => {
   const historyPromises = projects.map(async (project) => {
     const history = await fetchCommitHistory(project.github);

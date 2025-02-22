@@ -12,7 +12,9 @@ interface Skill {
   learning?: boolean;
 }
 
+// Rendering skills section
 const Skills: React.FC = () => {
+  // Render individual skill item
   const renderSkill = (skill: Skill, index: number) => (
     <Col md={3} sm={6} xs={6} key={index} className="text-center mb-4">
       <Card title={skill.label} className={styles.skillCard}>
