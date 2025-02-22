@@ -106,7 +106,7 @@
   align-items: start;
   transform: skew(-10deg);
   border-bottom: 1px solid var(--img-shield-border-color);
-  border-radius: 0 !important;
+  border-radius: 0;
 }
 
 @media (max-width: 425px) {
