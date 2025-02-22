@@ -1,4 +1,4 @@
-import React, { useState, useCallback, memo } from 'react';
+import React, { useState, useCallback, useRef, memo } from 'react';
 import {
   Nav,
   Container,
@@ -15,10 +15,12 @@ import appStyles from '@/App.module.css';
 import { socialLinks } from '@/data/socialLinks';
 import { navLinks } from '@/data/navLinks';
 import Button from '@/components/Button';
+import useClickOutside from '@/hooks/useClickOutside';
 
 const NavBar: React.FC = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
   const [showOffcanvas, setShowOffcanvas] = useState<boolean>(false);
+  const offcanvasRef = useRef<HTMLDivElement>(null);
 
   const handleModalOpen = useCallback((): void => setShowModal(true), []);
   const handleModalClose = useCallback((): void => setShowModal(false), []);
@@ -30,6 +32,8 @@ const NavBar: React.FC = () => {
     (): void => setShowOffcanvas(false),
     [],
   );
+
+  useClickOutside(offcanvasRef, handleOffcanvasClose);
 
   const NavLogo: React.FC = () => (
     <Nav.Link href="#hero" className="position-relative">
@@ -51,6 +55,7 @@ const NavBar: React.FC = () => {
     handleOffcanvasClose,
   }) => (
     <Offcanvas
+      ref={offcanvasRef}
       show={showOffcanvas}
       onHide={handleOffcanvasClose}
       placement="end"
