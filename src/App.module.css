@@ -190,11 +190,6 @@
   transition: color 0.3s ease;
 }
 
-.mainContent {
-  width: 100%;
-  padding-top: 5rem;
-}
-
 .mainIcon {
   color: var(--main-icon-color);
   margin-right: 0.65rem;
@@ -219,11 +214,4 @@
 .buttonText {
   letter-spacing: 0.3px;
   color: var(--text-light);
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .mainContent {
-    padding-top: 3rem;
-  }
 }
