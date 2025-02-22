@@ -1,14 +1,13 @@
-import React, { useState, useCallback, RefObject, memo } from 'react';
+import React, { useState, useCallback, memo } from 'react';
 import {
-  Navbar,
   Nav,
   Container,
   OverlayTrigger,
   Tooltip,
+  Offcanvas,
 } from 'react-bootstrap';
-import { HiBarsArrowDown, HiBarsArrowUp } from 'react-icons/hi2';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import useClickOutsideToggle from '@/hooks/OutsideClickHandler';
+import { TbLayoutSidebarRightExpandFilled } from 'react-icons/tb';
 import styles from './styles/NavBar.module.css';
 import ModalCv from './ModalCv';
 import navLogo from '@/assets/imgBg.webp';
@@ -18,134 +17,123 @@ import { navLinks } from '@/data/navLinks';
 import Button from '@/components/Button';
 
 const NavBar: React.FC = () => {
-  const {
-    expanded,
-    setExpanded,
-    ref,
-  }: {
-    expanded: boolean;
-    setExpanded: (value: boolean) => void;
-    ref: RefObject<HTMLDivElement>;
-  } = useClickOutsideToggle(() => {
-    setIsMenuOpen(false);
-    setExpanded(false);
-  });
-
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [showModal, setShowModal] = useState<boolean>(false);
+  const [showOffcanvas, setShowOffcanvas] = useState<boolean>(false);
 
   const handleModalOpen = useCallback((): void => setShowModal(true), []);
   const handleModalClose = useCallback((): void => setShowModal(false), []);
+  const handleOffcanvasOpen = useCallback(
+    (): void => setShowOffcanvas(true),
+    [],
+  );
+  const handleOffcanvasClose = useCallback(
+    (): void => setShowOffcanvas(false),
+    [],
+  );
 
-  const handleNavLinkClick = (): void => {
-    setExpanded(false);
-    setIsMenuOpen(false);
-  };
+  const NavLogo: React.FC = () => (
+    <Nav.Link href="#hero" className="position-relative">
+      <img
+        src={navLogo}
+        className={`position-absolute translate-middle-y top-0 start-0 ${styles.navLogo}`}
+        alt="Linus Johansson"
+      />
+    </Nav.Link>
+  );
+
+  interface NavbarOffcanvasProps {
+    handleModalOpen: () => void;
+    handleOffcanvasClose: () => void;
+  }
+
+  const NavbarOffcanvas: React.FC<NavbarOffcanvasProps> = ({
+    handleModalOpen,
+    handleOffcanvasClose,
+  }) => (
+    <Offcanvas
+      show={showOffcanvas}
+      onHide={handleOffcanvasClose}
+      placement="end"
+      className={styles.customOffcanvas}
+      data-bs-theme="dark"
+    >
+      <Offcanvas.Header closeButton className={styles.customOffcanvasHeader}>
+        <NavLogo />
+        <Offcanvas.Title
+          id="offcanvasNavbarLabel"
+          className={styles.offcanvasTitle}
+        >
+          Menu
+        </Offcanvas.Title>
+      </Offcanvas.Header>
+      <Offcanvas.Body className={styles.customOffcanvasBody}>
+        <NavLinks />
+        <hr className="my-2" />
+        <SocialLinks handleModalOpen={handleModalOpen} />
+      </Offcanvas.Body>
+    </Offcanvas>
+  );
+
+  const NavLinks: React.FC = () => (
+    <Nav className={styles.customOffcanvasNav}>
+      {navLinks.map(({ id, icon: Icon, label }) => (
+        <Nav.Link key={id} href={`#${id}`} className={styles.navLink}>
+          <Icon className={`${styles.navIcon} me-3`} />
+          <span className={styles.navLinkText}>{label}</span>
+        </Nav.Link>
+      ))}
+    </Nav>
+  );
+
+  interface SocialLinksProps {
+    handleModalOpen: () => void;
+  }
+
+  const SocialLinks: React.FC<SocialLinksProps> = ({ handleModalOpen }) => (
+    <div className={styles.customOffcanvasSocialLinks}>
+      <Nav className="d-flex flex-row justify-content-between w-100">
+        {socialLinks.map(({ id, icon, href, onClick, tooltip, iconClass }) => (
+          <OverlayTrigger
+            key={id}
+            placement="top"
+            overlay={
+              <Tooltip id={`tooltip-${id}`} className={appStyles.customTooltip}>
+                {tooltip}
+              </Tooltip>
+            }
+          >
+            <Nav.Link
+              href={href}
+              onClick={id === 'download-pdf' ? handleModalOpen : onClick}
+              target={href ? '_blank' : undefined}
+              className={`d-flex justify-content-center ${styles.socialLink}`}
+            >
+              <FontAwesomeIcon
+                icon={icon}
+                className={`${appStyles.socialIcon} ${iconClass}`}
+              />
+            </Nav.Link>
+          </OverlayTrigger>
+        ))}
+      </Nav>
+    </div>
+  );
 
   return (
     <>
-      <Navbar
-        ref={ref}
-        fixed="top"
-        expand="lg"
-        className={styles.customNavbar}
-        expanded={expanded}
-      >
-        <Container fluid className="pe-1">
-          <Nav.Link href="#hero" className="position-relative">
-            <img
-              src={navLogo}
-              className={`position-absolute translate-middle-y top-0 start-0 ${styles.navLogo}`}
-              alt="Linus Johansson"
+      <Container fluid>
+        <div className={styles.navContainer}>
+          <Button onClick={handleOffcanvasOpen} className={styles.navToggle}>
+            <TbLayoutSidebarRightExpandFilled
+              className={styles.navToggleIcon}
             />
-          </Nav.Link>
-          <Navbar.Toggle
-            aria-controls="navbar-nav"
-            onClick={() => {
-              setExpanded(!expanded);
-              setIsMenuOpen(!isMenuOpen);
-            }}
-            className={styles.customToggle}
-          >
-            {isMenuOpen ? (
-              <HiBarsArrowUp className={styles.navIconToggle} />
-            ) : (
-              <HiBarsArrowDown className={styles.navIconToggle} />
-            )}
-          </Navbar.Toggle>
-          <Navbar.Collapse id="navbar-nav">
-            <Nav className={`ms-auto my-1 my-lg-0 ${appStyles.cardBgImage}`}>
-              {navLinks.map(
-                ({
-                  id,
-                  icon: Icon,
-                  label,
-                }: {
-                  id: string;
-                  icon: React.ElementType;
-                  label: string;
-                }) => (
-                  <Nav.Link
-                    key={id}
-                    href={`#${id}`}
-                    className={`${styles.navLink} my-2 my-lg-0 ms-lg-2`}
-                    onClick={handleNavLinkClick}
-                  >
-                    <Icon className={`${styles.navIcon} me-lg-2 me-3`} />
-                    <span className={styles.navLinkText}>{label}</span>
-                  </Nav.Link>
-                ),
-              )}
-            </Nav>
-            <Nav className="d-flex flex-row justify-content-between justify-content-sm-start ms-lg-2">
-              {socialLinks.map(
-                ({
-                  id,
-                  icon,
-                  href,
-                  onClick,
-                  tooltip,
-                  iconClass,
-                }: {
-                  id: string;
-                  icon: any;
-                  href?: string;
-                  onClick?: () => void;
-                  tooltip?: string;
-                  iconClass?: string;
-                }) => (
-                  <OverlayTrigger
-                    key={id}
-                    placement="bottom"
-                    overlay={
-                      <Tooltip
-                        id={`tooltip-${id}`}
-                        className={appStyles.customTooltip}
-                      >
-                        {tooltip}
-                      </Tooltip>
-                    }
-                  >
-                    <Nav.Link
-                      href={href}
-                      onClick={
-                        id === 'download-pdf' ? handleModalOpen : onClick
-                      }
-                      target={href ? '_blank' : undefined}
-                      className={`ms-lg-0 ms-1 me-lg-0 me-sm-5 me-2 mt-3 mt-lg-0 ${id === 'certificate' || id === 'source-code' ? 'd-lg-none' : ''}`}
-                    >
-                      <FontAwesomeIcon
-                        icon={icon}
-                        className={`${appStyles.socialIcon} ${iconClass} px-0`}
-                      />
-                    </Nav.Link>
-                  </OverlayTrigger>
-                ),
-              )}
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+          </Button>
+          <NavbarOffcanvas
+            handleModalOpen={handleModalOpen}
+            handleOffcanvasClose={handleOffcanvasClose}
+          />
+        </div>
+      </Container>
       <ModalCv show={showModal} handleClose={handleModalClose} />
     </>
   );
