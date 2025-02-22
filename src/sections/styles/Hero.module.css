@@ -1,7 +1,7 @@
 .heroImage {
   width: 280px;
   height: 280px;
-  border-radius: 15px !important;
+  border-radius: 15px;
   object-fit: cover;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease-in-out;
@@ -30,28 +30,50 @@
 }
 
 .downloadButton {
+  width: 180px;
+  height: 45px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  transform: skew(-10deg);
+  max-width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   background: var(--btn-bg-primary);
 }
 
 .downloadButton:hover {
   background: var(--btn-bg-primary);
+  filter: brightness(0.7);
 }
 
 .downloadButton:active {
   background: var(--btn-bg-primary) !important;
+  transform: skew(-10deg) scale(0.96);
 }
 
 .contactButton {
+  width: 180px;
+  height: 45px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  transform: skew(-10deg);
+  max-width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   background: var(--btn-bg-dark);
   font-size: 1.05rem;
 }
 
 .contactButton:hover {
   background: var(--btn-bg-dark);
+  filter: brightness(0.7);
 }
 
 .contactButton:active {
   background: var(--btn-bg-dark) !important;
+  transform: skew(-10deg) scale(0.96);
 }
 
 .buttonIcon {
